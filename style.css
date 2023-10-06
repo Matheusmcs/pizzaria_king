@@ -1,7 +1,8 @@
-:root{
-amarelo:#FFE129; 
-vermelho: #FF1B02;
-preto: #000000;    
+@charset "utf8";
+*{
+    amarelo:#FFE129; 
+    vermelho: #FF1B02;
+    preto: #000000; 
 }
 body{background-image:url(imagens/Dia-Nacional-da-Pizza.png);
 background-repeat: no-repeat;
