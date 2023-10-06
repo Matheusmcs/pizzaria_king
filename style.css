@@ -1,0 +1,15 @@
+:root{
+amarelo:#FFE129; 
+vermelho: #FF1B02;
+preto: #000000;    
+}
+body{background-image:url(imagens/Dia-Nacional-da-Pizza.png);
+background-repeat: no-repeat;
+background-image: url(imagens/pizza-italiana-fresca-com-ia-generativa-de-fatia-de-queijo-mussarela_188544-12347.avif);
+background-size: 100% 100%;
+background-position:top left;
+height: 100vh;
+}
+.titulo {color: #FF1B02;
+font-family: Georgia, 'Times New Roman', Times, serif ;
+}
