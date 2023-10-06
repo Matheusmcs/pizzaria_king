@@ -10,4 +10,6 @@ background-size: 100% 100%;
 background-position:top left;
 height: 100vh;
 }
-.titulo {color: #FF1B02;}
+.titulo {color: #FF1B02;
+font-family: Georgia, 'Times New Roman', Times, serif ;
+}
