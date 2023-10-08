@@ -1,9 +1,11 @@
 @charset "utf8";
-*{
-    amarelo:#FFE129; 
+
+* {
+    amarelo: #FFE129;
     vermelho: #FF1B02;
-    preto: #000000; 
+    preto: #000000;
 }
+<<<<<<< HEAD
 body{background-image:url(imagens/Dia-Nacional-da-Pizza.png);
 background-repeat: no-repeat;
 background-image: url(imagens/pizza-italiana-fresca-com-ia-generativa-de-fatia-de-queijo-mussarela_188544-12347.avif);
@@ -71,4 +73,19 @@ input#submit{
 }
 .nav{
     background-color: white;
+=======
+
+body {
+    background-image: url(imagens/Dia-Nacional-da-Pizza.png);
+    background-repeat: no-repeat;
+    background-image: url(imagens/pizza-italiana-fresca-com-ia-generativa-de-fatia-de-queijo-mussarela_188544-12347.avif);
+    background-size: 100% 100%;
+    background-position: top left;
+    height: 100vh;
+}
+
+.titulo {
+    color: #FF1B02;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+>>>>>>> 13e854e452fad9f98aeeee251eac56e8ea5257a4
 }
