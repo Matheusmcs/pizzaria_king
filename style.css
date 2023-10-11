@@ -20,7 +20,7 @@ background-attachment: fixed;
 font-family: Georgia, 'Times New Roman', Times, serif ;
 }
 
-div#container{
+div.container{
     width: 400px;
     height: 300px;
     background-color: rgb(255, 255, 255, 0.3);
@@ -31,7 +31,19 @@ div#container{
     margin-top: 120px;
     text-align: center;
 }
-div#container img{
+div.containerII{
+    width: 400px;
+    height: 360px;
+    background-color: rgb(255, 255, 255, 0.3);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 120px;
+    text-align: center;
+
+}
+div.container img{
     width: 120px;
     height: 120px;
     margin-top: -60px;
@@ -50,15 +62,19 @@ div#container img{
     background-position: 10px;
     border-radius: 10px;
 }
-input#email{
+input.email{
+    background-image: url("imagens/icone-usuario.png");
+    
+}
+input.nome_cliente{
     background-image: url("imagens/icone-usuario.png");
 
 }
-input#senha{
+input.senha{
     background-image: url("imagens/icone-cadeado.png");
 
 }
-input#submit{
+input.submit{
     color: #fff;
     background-color: #f79300;
     border: 2px solid #db7d00;
