@@ -33,11 +33,13 @@ $logado = $_SESSION['email'];
 
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            
+
           <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a class="nav-link" href="inicio.php">Home</a></li>
             <li class="nav-item"><a class="nav-link " href="cardapio.php">cardapio</a></li>
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="promocoes.php">Promoções</a></li>
+            <li class="nav-item"><a class="nav-link" href="logof.php">sair</a></li>
+
          </ul>
 
           </div>

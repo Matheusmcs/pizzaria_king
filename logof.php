@@ -9,4 +9,5 @@ session_destroy();
 
 // Redirecione o usuário para a página de login (ou qualquer outra página desejada)
 header("Location: login.php");
+
 ?>
