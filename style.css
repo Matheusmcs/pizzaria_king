@@ -1,26 +1,27 @@
 @charset "utf8";
 
-* {
-    amarelo: #FFE129;
-    vermelho: #FF1B02;
-    preto: #000000;
-}
-
-body{
-background-image:url(imagens/Dia-Nacional-da-Pizza.png);
-background-repeat: no-repeat;
-background-image: url(imagens/pizza-italiana-fresca-com-ia-generativa-de-fatia-de-queijo-mussarela_188544-12347.avif);
-background-size: 100% 100%;
-background-position:top left;
-height: 100vh;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-background-attachment: fixed;
+body.body1{
+    background-size: 100% 100%;
+    background-position:top left;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
 }
 .titulo {color: #FF1B02;
-font-family: Georgia, 'Times New Roman', Times, serif ;
+    font-family: Georgia, 'Times New Roman', Times, serif ;
+}
+.body2{
+    background-image: url(imagens/Dia-Nacional-da-Pizza.png);
+    background-repeat: no-repeat;
+    height: 70vh;
+    background-size: 100% 100%;
+    background-position: top left;
+    background-attachment: fixed;
 }
 
-div#container{
+div.container{
     width: 400px;
     height: 300px;
     background-color: rgb(255, 255, 255, 0.3);
@@ -30,8 +31,21 @@ div#container{
     margin: 0 auto;
     margin-top: 120px;
     text-align: center;
+   
 }
-div#container img{
+div.containerII{
+    width: 400px;
+    height: 360px;
+    background-color: rgb(255, 255, 255, 0.3);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 120px;
+    text-align: center;
+    padding-top: 15px;
+}
+div.container img{
     width: 120px;
     height: 120px;
     margin-top: -60px;
@@ -41,7 +55,7 @@ div#container img{
     
     height: 40px;
     width: 80%;
-    font-size: 18px;
+    font-size: 18px; 
     margin-bottom: 10px;
     background-color: #fff;
     padding-left: 40px;
@@ -50,15 +64,19 @@ div#container img{
     background-position: 10px;
     border-radius: 10px;
 }
-input#email{
+input.email{
+    background-image: url("imagens/icone-usuario.png");
+    
+}
+input.nome_cliente{
     background-image: url("imagens/icone-usuario.png");
 
 }
-input#senha{
+input.senha{
     background-image: url("imagens/icone-cadeado.png");
 
 }
-input#submit{
+input.submit{
     color: #fff;
     background-color: #f79300;
     border: 2px solid #db7d00;
@@ -72,8 +90,72 @@ input#submit{
     background: -moz-linear-gradient(to bottom, #faa600, #f68a00);
     background: -o-linear-gradient(to bottom, #faa600, #f68a00);
 }
+.login-link{
+    margin-left: 40px;
+}
+#imagem-pizza{
+    margin-right: 800px;
+}
+.caixa-entrada{
+    border: solid 1px black;
+    border-radius: 10px;
+}
+.btn{
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+}
 .nav{
-    background-color: white;
+    background-color: rgb(253, 194, 0);
 
 
 }
+.p2{
+    color: white;
+}
+.div-1{
+    margin: auto;
+    background-color: 255, 255, 255, 0.3;
+}
+.div-2{
+    width: 100px;
+    height: 500px;
+    border: solid 1px;
+    
+}
+.div-inicio{
+    margin: auto;
+}
+.div{
+    border:solid 1px ;
+    height: 100px;
+}
+.container-fluid2 {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0px;
+}
+
+#mainSlider .carousel-inner #mainSlider .carousel-item{
+    height: 90vh;
+} 
+#carouselExampleAutoplaying .img-fluid {
+    width: 300px; /* Defina a largura desejada */
+    height: 200px; /* Defina a altura desejada */
+  }
