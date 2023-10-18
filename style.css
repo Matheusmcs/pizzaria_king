@@ -137,6 +137,10 @@ input.submit{
 .div-inicio{
     margin: auto;
 }
+.div{
+    border:solid 1px ;
+    height: 100px;
+}
 .container-fluid2 {
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
