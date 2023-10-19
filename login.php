@@ -1,9 +1,9 @@
-<!--<?php
+<?php
 
 session_start();
 
 // Conexão com o banco de dados SQLite
-$db = new SQLite3('bd_pizzaria');
+$db = new Sqlite3('bd_pizzaria');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $username = $_POST['username'];
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "Credenciais inválidas.";
   }
 }
-?>-->
+?>
 
 
 

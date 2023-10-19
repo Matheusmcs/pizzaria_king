@@ -1,36 +1,12 @@
-
+1
 <?php
 
     if(isset($_POST['submit']))
     {
-        // print_r('Nome: ' . $_POST['nome']);
-        // print_r('<br>');
-        // print_r('Email: ' . $_POST['email']);
-        // print_r('<br>');
-        // print_r('Telefone: ' . $_POST['telefone']);
-        // print_r('<br>');
-        // print_r('Sexo: ' . $_POST['genero']);
-        // print_r('<br>');
-        // print_r('Data de nascimento: ' . $_POST['data_nascimento']);
-        // print_r('<br>');
-        // print_r('Cidade: ' . $_POST['cidade']);
-        // print_r('<br>');
-        // print_r('Estado: ' . $_POST['estado']);
-        // print_r('<br>');
-        // print_r('Endereço: ' . $_POST['endereco']);
+    
 
         include_once('conexao.php');
 
-        $nome = $_POST['nome'];
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
-        $telefone = $_POST['telefone'];
-        $endereco = $_POST['endereco'];
-
-        $resultado = mysqli_query($conexao, "INSERT INTO usuarios(nome,senha,email,telefone,sexo,data_nasc,cidade,estado,endereco) 
-        VALUES ('$nome','$senha','$email','$telefone',$endereco')");
-
-        header('Location: login.php');
     }
 
 ?>
@@ -46,34 +22,7 @@
   </head>
 
   <body class="body2">
-   <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="imagens/pizzariaIII.jpeg" alt="" width="50" height="" />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link" href="inicio.html">Home</a>
-            <a class="nav-link" href="cardapio.php">cardapio</a>
-            <a class="nav-link" href="promoções.html">Promoções</a>
-            <a class="nav-link active" aria-current="page" href="cadastrar.html">Cadastrar</a>
-            <a class="nav-link" href="login.php">Login</a
-            >
-          </div>
-        </div>
-      </div>
-    </nav>-->
+ 
     <div class="container-fluid containerII">
 
       
