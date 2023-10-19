@@ -117,7 +117,8 @@ input.submit{
     border-radius: 0.25rem;
 }
 .nav{
-    background-color: rgb(253, 194, 0);
+    background-color: black;
+    padding: 10px;
 
 
 }
@@ -139,7 +140,10 @@ input.submit{
 }
 .div{
     border:solid 1px ;
-    height: 100px;
+    width: 50px;
+}
+.div-pedido{
+    text-align: center;     
 }
 .container-fluid2 {
     --bs-gutter-x: 1.5rem;
@@ -159,3 +163,58 @@ input.submit{
     width: 300px; /* Defina a largura desejada */
     height: 200px; /* Defina a altura desejada */
   }
+  .img-fluid2{
+    width: 200px;
+  }
+  .logo{
+    color: white;
+  }
+  .a-logo{
+    margin-right: 800px;
+    text-decoration: none;
+  }
+  .a-inicio{
+    margin-right: 5px;
+  }
+  .navbar-brand {
+    padding-top: var(--bs-navbar-brand-padding-y);
+    padding-bottom: var(--bs-navbar-brand-padding-y);
+     margin-right: var(--bs-navbar-brand-margin-end); 
+    font-size: var(--bs-navbar-brand-font-size);
+    color: var(--bs-navbar-brand-color);
+    text-decoration: none;
+    white-space: nowrap;
+}
+  #grosso{
+    color: black;
+    border:solid 1px;
+    background-color: rgb(253, 194, 0);
+    border-radius: 10px;
+    padding: 2px;
+
+  }
+  .pedido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .quantidade {
+    display: flex;
+    align-items: center;
+  }
+  
+  .decrementar, .incrementar {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .quantidade-numero {
+    margin: 0 10px;
+  }
+  

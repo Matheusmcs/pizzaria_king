@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>THE KING´S</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="imagens/logo.png" type="image/x-icon">
   </head>
+
   <body class="body1">
     <header>
-      <nav class="navbar navbar-expand-lg nav">
+      <nav class="navbar navbar-expand nav">
   
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            <img id="imagem-pizza" src="imagens/pizzariaIII.jpeg" alt="" width="50" height="" />
+            <a class="a-logo" href="inicio.html">
+              <h1 class="logo">Pizzaria <strong id="grosso">King</strong></h1>
+            </a>
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,10 +26,8 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <ul class="navbar-nav ml-auto">
-              <li class="nav-item"><a class="nav-link active" aria-current="page" href="inicio.php">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="cardapio.php">cardapio</a></li>
-              <li class="nav-item"><a class="nav-link" href="promocoes.php">Promoções</a></li>
-              <li class="nav-item"><a class="btn btn-outline-light ml-4 btn-warning" hre  f="login.php">Entrar</a></li>
+              <li class="nav-item"><a class="btn btn-outline-light ml-4 btn-warning a-inicio" href="login.php">Entrar</a></li>
+              <li class="nav-item"><a class="btn btn-outline-light ml-4 btn-warning a-inicio" href="cadastrar.php">cadastrar</a></li>
               </ul>
             </div>
           </div>
@@ -59,12 +61,35 @@
       </div>
 
   <div class="row">
-<div class="col-md-4 div">1</div>
-<div class="col-md-4 div">2</div>
+<div class="col-md-4 div">
+
+  <div class="div-pedido">
+
+    <img src="imagens/pizza_calabresa.png" class="img-fluid2" alt="pizza-calabresa">
+    <h2>pizza-calabresa</h2>
+    <p>pizza mais amada do brasil, calabresa, cebola, molho de tomate,  musareala.</p>
+   
+    <div class="pedido">
+      <span class="item-nome">Item do Pedido</span>
+      <span class="item-preco">R$ 15.50</span>
+      <div class="quantidade">
+        <button class="decrementar">-</button>
+        <span class="quantidade-numero">0</span>
+        <button class="incrementar">+</button>
+        <div class="resumo-pedido">
+          <span>Quantidade: <span id="quantidade-total">0</span></span>
+          <span>Preço Total: R$<span id="preco-total">0.00</span></span>
+        </div>
+      </div>
+  
+  
+  </div>
+</div>
+<!--<div class="col-md-4 div">2</div>
 <div class="col-md-4 div">3</div>
 <div class="col-md-4 div"></div>
 <div class="col-md-4 div"></div>
-<div class="col-md-4 div"></div>
+<div class="col-md-4 div"></div>-->
   </div>
   
 
