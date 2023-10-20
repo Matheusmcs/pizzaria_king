@@ -137,10 +137,13 @@ input.submit{
 }
 .div-inicio{
     margin: auto;
+margin-bottom: 10px;
 }
 .div{
     border:solid 1px ;
     width: 50px;
+    box-shadow: 5px 5px 10px 2px #00000042;
+    border-radius: 10px;
 }
 .div-pedido{
     text-align: center;     
