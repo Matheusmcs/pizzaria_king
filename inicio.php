@@ -10,19 +10,15 @@
 
   <body class="body1">
     <header>
-      <nav class="navbar navbar-expand nav">
+      <nav class="navbar navbar-expand-lg nav">
   
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <a class="a-logo" href="inicio.html">
-              <h1 class="logo">Pizzaria <strong id="grosso">King</strong></h1>
+              <h1 class="logo">Pizzaria <strong id="grosso">King</strong></h1> <!--a logo que eu transformei em letras porque não estou conseguindo colocar as imagens transparentes-->
             </a>
           </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-  
+          
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <ul class="navbar-nav ml-auto">
@@ -61,13 +57,141 @@
       </div>
 
   <div class="row">
-<div class="col-md-4 div">
+  <div class="col-md-4 div"> <!--1-->
 
   <div class="div-pedido">
 
     <img src="imagens/pizza_calabresa.png" class="img-fluid2" alt="pizza-calabresa">
-    <h2>pizza-calabresa</h2>
-    <p>pizza mais amada do brasil, calabresa, cebola, molho de tomate,  musareala.</p>
+    <h2 class="h2-pedidos">pizza-calabresa</h2>
+    <p class="p-pedidos">pizza mais amada do brasil, calabresa, cebola, molho de tomate,  musareala.</p>
+   
+    <div class="pedido">
+      <span class="item-nome">Item do Pedido</span>
+      <span class="item-preco">R$ 15.50</span>
+      <div class="quantidade">
+        <button class="decrementar">-</button>
+        <span class="quantidade-numero">0</span>
+        <button class="incrementar">+</button>
+        <div class="resumo-pedido">
+          <span>Quantidade: <span id="quantidade-total">0</span></span>
+          <span>Preço Total: R$<span id="preco-total">0.00</span></span>
+        </div>
+      </div>
+  
+  
+  </div>
+</div>
+
+  </div>
+  <div class="col-md-4 div"> <!--2-->
+
+  <div class="div-pedido">
+
+    <img src="imagens/pizza_peperoni.png" class="img-fluid2" alt="pizza-calabresa">
+    <h2 class="h2-pedidos">pizza-peperoni</h2>
+    <p class="p-pedidos">pizza mais amada do brasil, calabresa, cebola, molho de tomate,  musareala.</p>
+   
+    <div class="pedido">
+      <span class="item-nome">Item do Pedido</span>
+      <span class="item-preco">R$ 15.50</span>
+      <div class="quantidade">
+        <button class="decrementar">-</button>
+        <span class="quantidade-numero">0</span>
+        <button class="incrementar">+</button>
+        <div class="resumo-pedido">
+          <span>Quantidade: <span id="quantidade-total">0</span></span>
+          <span>Preço Total: R$<span id="preco-total">0.00</span></span>
+        </div>
+      </div>
+  
+  
+  </div>
+</div>
+  </div>
+  <div class="col-md-4 div"> <!--3-->
+
+  <div class="div-pedido">
+
+    <img src="imagens/pizza_calabresa.png" class="img-fluid2" alt="pizza-calabresa">
+    <h2 class="h2-pedidos">pizza-calabresa</h2>
+    <p class="p-pedidos">pizza mais amada do brasil, calabresa, cebola, molho de tomate,  musareala.</p>
+   
+    <div class="pedido">
+      <span class="item-nome">Item do Pedido</span>
+      <span class="item-preco">R$ 15.50</span>
+      <div class="quantidade">
+        <button class="decrementar">-</button>
+        <span class="quantidade-numero">0</span>
+        <button class="incrementar">+</button>
+        <div class="resumo-pedido">
+          <span>Quantidade: <span id="quantidade-total">0</span></span>
+          <span>Preço Total: R$<span id="preco-total">0.00</span></span>
+        </div>
+      </div>
+  
+  
+  </div>
+</div>
+
+  </div>
+  <div class="col-md-4 div"> <!--4-->
+
+  <div class="div-pedido">
+
+    <img src="imagens/pizza_calabresa.png" class="img-fluid2" alt="pizza-calabresa">
+    <h2 class="h2-pedidos">pizza-calabresa</h2>
+    <p class="p-pedidos">pizza mais amada do brasil, calabresa, cebola, molho de tomate,  musareala.</p>
+   
+    <div class="pedido">
+      <span class="item-nome">Item do Pedido</span>
+      <span class="item-preco">R$ 15.50</span>
+      <div class="quantidade">
+        <button class="decrementar">-</button>
+        <span class="quantidade-numero">0</span>
+        <button class="incrementar">+</button>
+        <div class="resumo-pedido">
+          <span>Quantidade: <span id="quantidade-total">0</span></span>
+          <span>Preço Total: R$<span id="preco-total">0.00</span></span>
+        </div>
+      </div>
+  
+  
+  </div>
+</div>
+
+  </div>
+  <div class="col-md-4 div"> <!--5-->
+
+  <div class="div-pedido">
+
+    <img src="imagens/pizza_calabresa.png" class="img-fluid2" alt="pizza-calabresa">
+    <h2 class="h2-pedidos">pizza-calabresa</h2>
+    <p class="p-pedidos">pizza mais amada do brasil, calabresa, cebola, molho de tomate,  musareala.</p>
+   
+    <div class="pedido">
+      <span class="item-nome">Item do Pedido</span>
+      <span class="item-preco">R$ 15.50</span>
+      <div class="quantidade">
+        <button class="decrementar">-</button>
+        <span class="quantidade-numero">0</span>
+        <button class="incrementar">+</button>
+        <div class="resumo-pedido">
+          <span>Quantidade: <span id="quantidade-total">0</span></span>
+          <span>Preço Total: R$<span id="preco-total">0.00</span></span>
+        </div>
+      </div>
+  
+  
+  </div>
+</div>
+  </div>
+  <div class="col-md-4 div"> <!--6-->
+
+  <div class="div-pedido">
+
+    <img src="imagens/pizza_calabresa.png" class="img-fluid2" alt="pizza-calabresa">
+    <h2 class="h2-pedidos">pizza-calabresa</h2>
+    <p class="p-pedidos">pizza mais amada do brasil, calabresa, cebola, molho de tomate,  musareala.</p>
    
     <div class="pedido">
       <span class="item-nome">Item do Pedido</span>
@@ -90,6 +214,7 @@
 <div class="col-md-4 div"></div>
 <div class="col-md-4 div"></div>
 <div class="col-md-4 div"></div>-->
+  </div>
   </div>
   
 
