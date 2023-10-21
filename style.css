@@ -13,12 +13,13 @@ body.body1{
     font-family: Georgia, 'Times New Roman', Times, serif ;
 }
 .body2{
-    background-image: url(imagens/Dia-Nacional-da-Pizza.png);
+    background-image: url(imagens/fundo\ 1.jpg);
     background-repeat: no-repeat;
-    height: 70vh;
+    height: 100vh;
     background-size: 100% 100%;
     background-position: top left;
     background-attachment: fixed;
+    ;
 }
 
 div.container{
