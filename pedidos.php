@@ -1,103 +1,41 @@
 <?php
 
+
 session_start();
 
-$pizza_calabresa = 15.50;
-$pizza_peperoni = 19.50;
-$pizza_marguerita = 25.50;
-$pizza_portuguesa = 25.50;
-$pizza_chocoboom = 60.50;
-$pizza_frango_requeijao = 25.50;
+$pizza_precos = [
+    "calabresa" => 15.50,
+    "peperoni" => 19.50,
+    "marguerita" => 25.50,
+    "portuguesa" => 25.50,
+    "chocoboom" => 60.50,
+    "frango_requeijao" => 25.50
+];
 
-$quantidade_total1 = isset($_SESSION["quantidade_calabresa"]) ? $_SESSION["quantidade_calabresa"] : 0;
-$preco_total1 = isset($_SESSION["preco_total1"]) ? number_format($_SESSION["preco_total1"], 2) : 0.00;
+$quantidades = [];
+$precos_totais = [];
 
-// Faça o mesmo para os outros sabores de pizza
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $quantidade_calabresa = $_POST["quantidade_calabresa"];
-    $quantidade_peperoni = $_POST["quantidade_peperoni"];
-    $quantidade_marguerita = $_POST["quantidade_marguerita"];
-    $quantidade_portuguesa = $_POST["quantidade_portuguesa"];
-    $quantidade_chocoboom = $_POST["quantidade_chocoboom"];
-    $quantidade_frango_requeijao = $_POST["quantidade_frango_requeijao"];
-
-    if (!isset($_SESSION["quantidade_calabresa"])) {
-        $_SESSION["quantidade_calabresa"] = 0;
-    }
-
-    if (!isset($_SESSION["quantidade_peperoni"])) {
-        $_SESSION["quantidade_peperoni"] = 0;
-    }
-
-    // Faça isso para os outros sabores de pizza
-
-    if (!isset($_SESSION["preco_total1"])) {
-        $_SESSION["preco_total1"] = 0;
-    }
-
-    if (!isset($_SESSION["preco_total2"])) {
-        $_SESSION["preco_total2"] = 0;
-    }
-
-    // Faça isso para os outros sabores de pizza
-
-    // Atualiza a quantidade total de itens no pedido
-    $_SESSION["quantidade_calabresa"] += $quantidade_calabresa;
-    $_SESSION["quantidade_peperoni"] += $quantidade_peperoni;
-    $_SESSION["quantidade_marguerita"] += $quantidade_marguerita;
-    $_SESSION["quantidade_portuguesa"] += $quantidade_portuguesa;
-    $_SESSION["quantidade_chocoboom"] += $quantidade_chocoboom;
-    $_SESSION["quantidade_frango_requeijao"] += $quantidade_frango_requeijao;
-
-    // Atualiza o preço total do pedido
-    $_SESSION["preco_total1"] += ($quantidade_calabresa * $pizza_calabresa);
-    $_SESSION["preco_total2"] += ($quantidade_peperoni * $pizza_peperoni);
-    $_SESSION["preco_total3"] += ($quantidade_marguerita * $pizza_marguerita);
-    $_SESSION["preco_total4"] += ($quantidade_portuguesa * $pizza_portuguesa);
-    $_SESSION["preco_total5"] += ($quantidade_chocoboom * $pizza_chocoboom);
-    $_SESSION["preco_total6"] += ($quantidade_frango_requeijao * $pizza_frango_requeijao);
+foreach ($pizza_precos as $sabor => $preco) {
+    $quantidades[$sabor] = isset($_SESSION["quantidade_$sabor"]) ? $_SESSION["quantidade_$sabor"] : 0;
+    $precos_totais[$sabor] = isset($_SESSION["preco_total_$sabor"]) ? $_SESSION["preco_total_$sabor"] : 0.00;
 }
 
-$quantidade_total = isset($_SESSION["quantidade_calabresa"]) ? $_SESSION["quantidade_calabresa"] : 0;
-$preco_total = isset($_SESSION["preco_total1"]) ? number_format($_SESSION["preco_total1"], 2) : 0.00;
-?>
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    foreach ($pizza_precos as $sabor => $preco) {
+        $quantidade = $_POST["quantidade_$sabor"];
+        if (!isset($_SESSION["quantidade_$sabor"])) {
+            $_SESSION["quantidade_$sabor"] = 0;
+        }
+        if (!isset($_SESSION["preco_total_$sabor"])) {
+            $_SESSION["preco_total_$sabor"] = 0;
+        }
+        $_SESSION["quantidade_$sabor"] += $quantidade;
+        $_SESSION["preco_total_$sabor"] += ($quantidade * $preco);
+    }
+}
 
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <!-- O resto do seu código HTML permanece inalterado -->
-</head>
-
-<body class="body1">
-    <!-- O resto do seu código HTML permanece inalterado -->
-
-    <div class="div-pedido">
-        <img src="imagens/pizza_calabresa.png" class="img-fluid2" alt="pizza-calabresa">
-        <h2 class="h2-pedidos">Pizza Calabresa</h2>
-        <p class="p-pedidos">Pizza mais amada do Brasil, calabresa, cebola, molho de tomate, mussarela.</p>
-        <div class="pedido">
-            <form action="Pedido.php" method="post">
-                <span class="item-nome">Item do Pedido</span>
-                <span class="item-preco">R$ <?php echo $pizza_calabresa; ?></span>
-                <input type="number" name="quantidade_calabresa" value="1" min="1">
-                <input type="submit" value="Confirmar Pedido">
-            </form>
-            <div class="total-pedidos">
-                <p class="p-pedidos">Quantidade Total: <?php echo $quantidade_total1; ?></p>
-                <p class="p-pedidos">Preço Total: R$ <?php echo $preco_total1; ?></p>
-                <form method="post" action="limpar_pedidos.php">
-                    <input type="submit" value="Limpar Pedido">
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Repita a estrutura acima para os outros sabores de pizza -->
-</body>
-<!-- O restante do seu código HTML permanece inalterado -->
-
+$quantidade_total = array_sum($quantidades);
+$preco_total = number_format(array_sum($precos_totais), 2);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -169,184 +107,35 @@ $preco_total = isset($_SESSION["preco_total1"]) ? number_format($_SESSION["preco
   </div>
 
   <main class="main-principal">
-      <div class="row">
-        <div class="col-md-4 div"> <!--1-->
-          <div class="div-pedido">
-            <img src="imagens/pizza_calabresa.png" class="img-fluid2" alt="pizza-calabresa">
-            <h2 class="h2-pedidos">pizza-calabresa</h2>
-            <p class="p-pedidos">pizza mais amada do brasil, calabresa, cebola, molho de tomate, musareala.</p>
-            <div class="pedido">
-              <form action="pedidos.php" method="post">
-                <span class="item-nome">Item do Pedido</span>
-                <span class="item-preco">R$ 15.50</span>
-                <div class="quantidade">
-                  <!-- <button class="decrementar">-</button>-->
-                  <input type="number" name="quantidade1" value="1" min="1">
-                  <input type="submit" value="confirmar pedido">
+        <div class="row">
+            <?php foreach ($pizza_precos as $sabor => $preco) { ?>
+                <div class="col-md-4 div">
+                    <div class="div-pedido">
+                        <img src="imagens/pizza_<?php echo $sabor; ?>.png" class="img-fluid2" alt="pizza-<?php echo $sabor; ?>">
+                        <h2 class="h2-pedidos">Pizza <?php echo ucfirst($sabor); ?></h2>
+                        <p class="p-pedidos">Pizza mais amada do Brasil, calabresa, cebola, molho de tomate, mussarela.</p>
+                        <div class="pedido">
+                            <form action="pedidos.php" method="post">
+                                <span class="item-nome">Item do Pedido</span>
+                                <span class="item-preco">R$ <?php echo number_format($preco, 2); ?></span>
+                                <div class="quantidade">
+                                    <input type="number" name="quantidade_<?php echo $sabor; ?>" value="1" min="1">
+                                    <input type="submit" value="Confirmar Pedido">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="total-pedidos">
+                            <p class="p-pedidos">Quantidade Total: <?php echo $quantidades[$sabor]; ?></p>
+                            <p class="p-pedidos">Preço Total: R$ <?php echo number_format($precos_totais[$sabor], 2); ?></p>
+                            <form method="post" action="limpar_pedidos.php">
+                                <input type="submit" value="Limpar Pedido">
+                            </form>
+                        </div>
+                    </div>
                 </div>
-              </form>
-              <div class="total-pedidos">
-                <p class="p-pedidos">Quantidade Total:
-                  <?php echo $quantidade_total1; ?>
-                </p>
-                <p class="p-pedidos">Preço Total: R$
-                  <?php echo $preco_total1; ?>
-                </p>
-                <form method="post" action="limpar_pedidos.php">
-                  <input type="submit" value="Limpar Pedido">
-                </form>
-              </div>
-            </div>
-          </div>
+            <?php } ?>
         </div>
-        <div class="col-md-4 div"> <!--2-->
-          <div class="div-pedido">
-            <img src="imagens/pizza_peperoni.png" class="img-fluid2" alt="pizza-calabresa">
-            <h2 class="h2-pedidos">pizza-calabresa</h2>
-            <p class="p-pedidos">pizza mais amada do brasil, calabresa, cebola, molho de tomate, musareala.</p>
-            <div class="pedido">
-              <form action="pedidos.php" method="post">
-                <span class="item-nome">Item do Pedido</span>
-                <span class="item-preco">R$ 15.50</span>
-                <div class="quantidade">
-                  <!-- <button class="decrementar">-</button>-->
-                  <input type="number" name="quantidade2" value="1" min="1">
-                  <input type="submit" value="confirmar pedido">
-                </div>
-              </form>
-              <div class="total-pedidos">
-                <p class="p-pedidos">Quantidade Total:
-                  <?php echo $quantidade_total2; ?>
-                </p>
-                <p class="p-pedidos">Preço Total: R$
-                  <?php echo $preco_total2; ?>
-                </p>
-                <form method="post" action="limpar_pedidos.php">
-                  <input type="submit" value="Limpar Pedido">
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 div"> <!--3-->
-          <div class="div-pedido">
-            <img src="imagens/pizza_marguerita.png" class="img-fluid2" alt="pizza-calabresa">
-            <h2 class="h2-pedidos">pizza-calabresa</h2>
-            <p class="p-pedidos">pizza mais amada do brasil, calabresa, cebola, molho de tomate, musareala.</p>
-            <div class="pedido">
-              <form action="pedidos.php" method="post">
-                <span class="item-nome">Item do Pedido</span>
-                <span class="item-preco">R$ 15.50</span>
-                <div class="quantidade">
-                  <!-- <button class="decrementar">-</button>-->
-                  <input type="number" name="quantidade3" value="1" min="1">
-                  <input type="submit" value="confirmar pedido">
-                </div>
-              </form>
-              <div class="total-pedidos">
-                <p class="p-pedidos">Quantidade Total:
-                  <?php echo $quantidade_total3; ?>
-                </p>
-                <p class="p-pedidos">Preço Total: R$
-                  <?php echo $preco_total3; ?>
-                </p>
-                <form method="post" action="limpar_pedidos.php">
-                  <input type="submit" value="Limpar Pedido">
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 div"> <!--4-->
-          <div class="div-pedido">
-            <img src="imagens/pizza_portuguesa.png" class="img-fluid2" alt="pizza-calabresa">
-            <h2 class="h2-pedidos">pizza-calabresa</h2>
-            <p class="p-pedidos">pizza mais amada do brasil, calabresa, cebola, molho de tomate, musareala.</p>
-            <div class="pedido">
-              <form action="pedidos.php" method="post">
-                <span class="item-nome">Item do Pedido</span>
-                <span class="item-preco">R$ 15.50</span>
-                <div class="quantidade">
-                  <!-- <button class="decrementar">-</button>-->
-                  <input type="number" name="quantidade4" value="1" min="1">
-                  <input type="submit" value="confirmar pedido">
-                </div>
-              </form>
-              <div class="total-pedidos">
-                <p class="p-pedidos">Quantidade Total:
-                  <?php echo $quantidade_total4; ?>
-                </p>
-                <p class="p-pedidos">Preço Total: R$
-                  <?php echo $preco_total4; ?>
-                </p>
-                <form method="post" action="limpar_pedidos.php">
-                  <input type="submit" value="Limpar Pedido">
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 div"> <!--5-->
-          <div class="div-pedido">
-            <img src="imagens/pizza_gigante_chocolate.png" class="img-fluid2" alt="pizza-calabresa">
-            <h2 class="h2-pedidos">pizza-calabresa</h2>
-            <p class="p-pedidos">pizza mais amada do brasil, calabresa, cebola, molho de tomate, musareala.</p>
-            <div class="pedido">
-              <form action="pedidos.php" method="post">
-                <span class="item-nome">Item do Pedido</span>
-                <span class="item-preco">R$ 15.50</span>
-                <div class="quantidade">
-                  <!-- <button class="decrementar">-</button>-->
-                  <input type="number" name="quantidade5" value="1" min="1">
-                  <input type="submit" value="confirmar pedido">
-                </div>
-              </form>
-              <div class="total-pedidos">
-                <p class="p-pedidos">Quantidade Total:
-                  <?php echo $quantidade_total5; ?>
-                </p>
-                <p class="p-pedidos">Preço Total: R$
-                  <?php echo $preco_total5; ?>
-                </p>
-                <form method="post" action="limpar_pedidos.php">
-                  <input type="submit" value="Limpar Pedido">
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 div"> <!--6-->
-          <div class="div-pedido">
-            <img src="imagens/pizza_frango_requeijao.png" class="img-fluid2" alt="pizza-calabresa">
-            <h2 class="h2-pedidos">pizza-calabresa</h2>
-            <p class="p-pedidos">pizza mais amada do brasil, calabresa, cebola, molho de tomate, musareala.</p>
-            <div class="pedido">
-              <form action="pedidos.php" method="post">
-                <span class="item-nome">Item do Pedido</span>
-                <span class="item-preco">R$ 15.50</span>
-                <div class="quantidade">
-                  <!-- <button class="decrementar">-</button>-->
-                  <input type="number" name="quantidade6" value="1" min="1">
-                  <input type="submit" value="confirmar pedido">
-                </div>
-              </form>
-              <div class="total-pedidos">
-                <p class="p-pedidos">Quantidade Total:
-                  <?php echo $quantidade_total6; ?>
-                </p>
-                <p class="p-pedidos">Preço Total: R$
-                  <?php echo $preco_total6; ?>
-                </p>
-                <form method="post" action="limpar_pedidos.php">
-                  <input type="submit" value="Limpar Pedido">
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-  </main>
+    </main>
 
 
 
@@ -380,3 +169,4 @@ $preco_total = isset($_SESSION["preco_total1"]) ? number_format($_SESSION["preco
   integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 </html>
+
