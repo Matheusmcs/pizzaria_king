@@ -1,13 +1,13 @@
 @charset "utf8";
 
 body.body1{
+    background-image: linear-gradient(to bottom, #00000087, rgb(253 194 0));
     background-size: 100% 100%;
-    background-position:top left;
+    background-position: top left;
     height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    
 }
 .titulo {color: #FF1B02;
     font-family: Georgia, 'Times New Roman', Times, serif ;
@@ -144,6 +144,7 @@ margin-bottom: 10px;
     width: 50px;
     box-shadow: 5px 5px 10px 2px #00000042;
     border-radius: 10px;
+    padding-bottom: 5px ;
 }
 .div-pedido{
     text-align: center;     
@@ -173,11 +174,15 @@ margin-bottom: 10px;
     color: white;
   }
   .a-logo{
-    margin-right: 800px;
+    margin-right: 750px;
     text-decoration: none;
   }
   .a-inicio{
     margin-right: 5px;
+  }
+  .a-dropdown{
+    background-color: white;
+    color: white;
   }
   .navbar-brand {
     padding-top: var(--bs-navbar-brand-padding-y);
@@ -197,7 +202,7 @@ margin-bottom: 10px;
 
   }
   .pedido {
-    display: flex;
+    /*display: flex;*/
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
@@ -220,5 +225,75 @@ margin-bottom: 10px;
   .quantidade-numero {
     margin: 0 10px;
   }
+  .nav-link1 {
+    display: block;
+    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+    font-size: var(--bs-nav-link-font-size);
+    font-weight: var(--bs-nav-link-font-weight);
+    color: rgb(211 19 19 / 65%);
+    text-decoration: none;
+    background: 0 0;
+    border: 0;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+.row {
+    margin: 10px;
+    --bs-gutter-x: -0.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: 45px;
+}
 
+.main-principal {
+    width: 95%;
+    margin: auto;
+}
+.navbar-expand .navbar-nav .dropdown-menu {
+    position: absolute;
+    border: 1px solid #ccc;
+    margin-left: 1000px;
+}
+.footer{
+    background-color: black;
+    color: white;
+}
+
+.col-md-4 {
+    flex: 0 0 auto;
+    width: 32.333333%;
+}
+@media (max-width: 575.98px) {
+    .a-logo{
+        margin-right: 200px;
+        text-decoration: none;
+      }
+
+}
+    
+   
+
+
+/*// `md` applies to small devices (landscape phones, less than 768px)*/
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .a-logo{
+        margin-right: 200px;
+        text-decoration: none;
+      }
+    
+}
+        
+
+/*// `lg` applies to medium devices (tablets, less than 992px)*/
+@media (min-width: 768px) and (max-width: 991.98px) { 
+   
+ }
+
+/*// `xl` applies to large devices (desktops, less than 1200px)*/
+@media (min-width:992px) and (max-width: 1199.98px) { 
+   
+    
+}
 

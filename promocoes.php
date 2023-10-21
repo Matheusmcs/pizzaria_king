@@ -1,12 +1,12 @@
 <?php
-session_start();
+/*session_start();
 if ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true)) {
   unset($_SESSION['email']);
   unset($_SESSION['senha']);
   header('location: login.php');
 
 }
-$logado = $_SESSION['email'];
+$logado = $_SESSION['email'];*/
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -19,29 +19,25 @@ $logado = $_SESSION['email'];
 </head>
 
 <body class="body1">
-  <header>
+<header>
     <nav class="navbar navbar-expand-lg nav">
 
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          <img id="imagem-pizza" src="imagens/pizzariaIII.jpeg" alt="" width="50" height="" />
+          <a class="a-logo" href="inicio.html">
+            <h1 class="logo">Pizzaria <strong id="grosso">King</strong></h1>
+            <!--a logo que eu transformei em letras porque não estou conseguindo colocar as imagens transparentes-->
+          </a>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
 
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link" href="inicio.php">Home</a></li>
-            <li class="nav-item"><a class="nav-link " href="cardapio.php">cardapio</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="promocoes.php">Promoções</a></li>
-            <li class="nav-item"><a class="nav-link" href="logof.php">sair</a></li>
-
-         </ul>
-
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a class="btn btn-outline-light ml-4 btn-warning a-inicio"
+                  href="login.php">Entrar</a></li>
+              <li class="nav-item"><a class="btn btn-outline-light ml-4 btn-warning a-inicio"
+                  href="cadastrar.php">cadastrar</a></li>
+            </ul>
           </div>
         </div>
       </div>
