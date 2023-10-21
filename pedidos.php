@@ -1,42 +1,3 @@
-<?php
-
-
-session_start();
-
-$pizza_precos = [
-    "calabresa" => 15.50,
-    "peperoni" => 19.50,
-    "marguerita" => 25.50,
-    "portuguesa" => 25.50,
-    "chocoboom" => 60.50,
-    "frango_requeijao" => 25.50
-];
-
-$quantidades = [];
-$precos_totais = [];
-
-foreach ($pizza_precos as $sabor => $preco) {
-    $quantidades[$sabor] = isset($_SESSION["quantidade_$sabor"]) ? $_SESSION["quantidade_$sabor"] : 0;
-    $precos_totais[$sabor] = isset($_SESSION["preco_total_$sabor"]) ? $_SESSION["preco_total_$sabor"] : 0.00;
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    foreach ($pizza_precos as $sabor => $preco) {
-        $quantidade = $_POST["quantidade_$sabor"];
-        if (!isset($_SESSION["quantidade_$sabor"])) {
-            $_SESSION["quantidade_$sabor"] = 0;
-        }
-        if (!isset($_SESSION["preco_total_$sabor"])) {
-            $_SESSION["preco_total_$sabor"] = 0;
-        }
-        $_SESSION["quantidade_$sabor"] += $quantidade;
-        $_SESSION["preco_total_$sabor"] += ($quantidade * $preco);
-    }
-}
-
-$quantidade_total = array_sum($quantidades);
-$preco_total = number_format(array_sum($precos_totais), 2);
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -49,6 +10,45 @@ $preco_total = number_format(array_sum($precos_totais), 2);
 </head>
 
 <body class="body1">
+
+<script>
+    // Obtém os elementos HTML
+    const incrementarBtn = document.querySelector(".incrementar");
+    const decrementarBtn = document.querySelector(".decrementar");
+    const quantidadeNumero = document.querySelector(".quantidade-numero");
+    const precoItem = document.querySelector(".item-preco");
+    const precoTotal = document.querySelector(".preco-total");
+
+    let quantidade = 0;
+    const precoPorItem = 10.00;
+
+    // Função para incrementar a quantidade
+    incrementarBtn.addEventListener("click", function() {
+        quantidade++;
+        quantidadeNumero.innerText = quantidade;
+        atualizarTotal();
+    });
+
+    // Função para decrementar a quantidade
+    decrementarBtn.addEventListener("click", function() {
+        if (quantidade > 0) {
+            quantidade--;
+            quantidadeNumero.innerText = quantidade;
+            atualizarTotal();
+        }
+    });
+
+    // Função para atualizar o total
+    function atualizarTotal() {
+        const total = quantidade * precoPorItem;
+        precoTotal.innerText = "R$ " + total.toFixed(2);
+    }
+
+    // Inicializa o total
+    atualizarTotal();
+</script>
+
+
   <header>
     <nav class="navbar navbar-expand nav">
 
@@ -107,35 +107,115 @@ $preco_total = number_format(array_sum($precos_totais), 2);
   </div>
 
   <main class="main-principal">
-        <div class="row">
-            <?php foreach ($pizza_precos as $sabor => $preco) { ?>
-                <div class="col-md-4 div">
-                    <div class="div-pedido">
-                        <img src="imagens/pizza_<?php echo $sabor; ?>.png" class="img-fluid2" alt="pizza-<?php echo $sabor; ?>">
-                        <h2 class="h2-pedidos">Pizza <?php echo ucfirst($sabor); ?></h2>
-                        <p class="p-pedidos">Pizza mais amada do Brasil, calabresa, cebola, molho de tomate, mussarela.</p>
-                        <div class="pedido">
-                            <form action="pedidos.php" method="post">
-                                <span class="item-nome">Item do Pedido</span>
-                                <span class="item-preco">R$ <?php echo number_format($preco, 2); ?></span>
-                                <div class="quantidade">
-                                    <input type="number" name="quantidade_<?php echo $sabor; ?>" value="1" min="1">
-                                    <input type="submit" value="Confirmar Pedido">
-                                </div>
-                            </form>
-                        </div>
-                        <div class="total-pedidos">
-                            <p class="p-pedidos">Quantidade Total: <?php echo $quantidades[$sabor]; ?></p>
-                            <p class="p-pedidos">Preço Total: R$ <?php echo number_format($precos_totais[$sabor], 2); ?></p>
-                            <form method="post" action="limpar_pedidos.php">
-                                <input type="submit" value="Limpar Pedido">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            <?php } ?>
+    <div class="row">
+      <div class="col-md-4 div"> <!--1-->
+        <div class="div-pedido">
+          <img src="imagens/pizza_calabresa.png" class="img-fluid2" alt="pizza-calabresa">
+          <h2 class="h2-pedidos">pizza-calabresa</h2>
+          <p class="p-pedidos">pizza mais amada do brasil, calabresa, cebola, molho de tomate, musareala.</p>
+          <div class="pedido">
+            <span class="item-nome">Item do Pedido</span>
+            <span class="item-preco">R$ 10.00</span>
+            <div class="quantidade">
+              <button class="decrementar">-</button>
+              <span class="quantidade-numero">0</span>
+              <button class="incrementar">+</button>
+            </div>
+          </div>
+
         </div>
-    </main>
+      </div>
+      <div class="col-md-4 div"> <!--2-->
+        <div class="div-pedido">
+          <img src="imagens/pizza_peperoni.png" class="img-fluid2" alt="pizza-calabresa">
+          <h2 class="h2-pedidos">pizza-calabresa</h2>
+          <p class="p-pedidos">pizza mais amada do brasil, calabresa, cebola, molho de tomate, musareala.</p>
+          <div class="pedido">
+            <span class="item-nome">Item do Pedido</span>
+            <span class="item-preco">R$ 10.00</span>
+            <div class="quantidade">
+              <button class="decrementar">-</button>
+              <span class="quantidade-numero">0</span>
+              <button class="incrementar">+</button>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <div class="col-md-4 div"> <!--3-->
+      <div class="div-pedido">
+        <img src="imagens/pizza_marguerita.png" class="img-fluid2" alt="pizza-calabresa">
+        <h2 class="h2-pedidos">pizza-calabresa</h2>
+        <p class="p-pedidos">pizza mais amada do brasil, calabresa, cebola, molho de tomate, musareala.</p>
+        <div class="pedido">
+          <span class="item-nome">Item do Pedido</span>
+          <span class="item-preco">R$ 10.00</span>
+          <div class="quantidade">
+            <button class="decrementar">-</button>
+            <span class="quantidade-numero">0</span>
+            <button class="incrementar">+</button>
+          </div>
+        </div>
+
+      </div>
+      </div>
+      <div class="col-md-4 div"> <!--4-->
+      <div class="div-pedido">
+        <img src="imagens/pizza_portuguesa.png" class="img-fluid2" alt="pizza-calabresa">
+        <h2 class="h2-pedidos">pizza-calabresa</h2>
+        <p class="p-pedidos">pizza mais amada do brasil, calabresa, cebola, molho de tomate, musareala.</p>
+        <div class="pedido">
+          <span class="item-nome">Item do Pedido</span>
+          <span class="item-preco">R$ 10.00</span>
+          <div class="quantidade">
+            <button class="decrementar">-</button>
+            <span class="quantidade-numero">0</span>
+            <button class="incrementar">+</button>
+          </div>
+        </div>
+
+      </div>
+      </div>
+      <div class="col-md-4 div"> <!--5-->
+      <div class="div-pedido">
+        <img src="imagens/pizza_gigante_chocolate.png" class="img-fluid2" alt="pizza-calabresa">
+        <h2 class="h2-pedidos">pizza-calabresa</h2>
+        <p class="p-pedidos">pizza mais amada do brasil, calabresa, cebola, molho de tomate, musareala.</p>
+        <div class="pedido">
+          <span class="item-nome">Item do Pedido</span>
+          <span class="item-preco">R$ 10.00</span>
+          <div class="quantidade">
+            <button class="decrementar">-</button>
+            <span class="quantidade-numero">0</span>
+            <button class="incrementar">+</button>
+          </div>
+        </div>
+
+      </div>
+      </div>
+      <div class="col-md-4 div"> <!--6-->
+      <div class="div-pedido">
+        <img src="imagens/pizza_frango_requeijao.png" class="img-fluid2" alt="pizza-calabresa">
+        <h2 class="h2-pedidos">pizza-calabresa</h2>
+        <p class="p-pedidos">pizza mais amada do brasil, calabresa, cebola, molho de tomate, musareala.</p>
+        <div class="pedido">
+          <span class="item-nome">Item do Pedido</span>
+          <span class="item-preco">R$ 10.00</span>
+          <div class="quantidade">
+            <button class="decrementar">-</button>
+            <span class="quantidade-numero">0</span>
+            <button class="incrementar">+</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  
+    
+      
+  </main>
 
 
 
@@ -169,4 +249,3 @@ $preco_total = number_format(array_sum($precos_totais), 2);
   integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 </html>
-
