@@ -1,40 +1,102 @@
 <?php
+
 session_start();
 
+$pizza_calabresa = 15.50;
+$pizza_peperoni = 19.50;
+$pizza_marguerita = 25.50;
+$pizza_portuguesa = 25.50;
+$pizza_chocoboom = 60.50;
+$pizza_frango_requeijao = 25.50;
+
+$quantidade_total1 = isset($_SESSION["quantidade_calabresa"]) ? $_SESSION["quantidade_calabresa"] : 0;
+$preco_total1 = isset($_SESSION["preco_total1"]) ? number_format($_SESSION["preco_total1"], 2) : 0.00;
+
+// Faça o mesmo para os outros sabores de pizza
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $quantidade = $_POST["quantidade"];
+    $quantidade_calabresa = $_POST["quantidade_calabresa"];
+    $quantidade_peperoni = $_POST["quantidade_peperoni"];
+    $quantidade_marguerita = $_POST["quantidade_marguerita"];
+    $quantidade_portuguesa = $_POST["quantidade_portuguesa"];
+    $quantidade_chocoboom = $_POST["quantidade_chocoboom"];
+    $quantidade_frango_requeijao = $_POST["quantidade_frango_requeijao"];
 
-  if (!isset($_SESSION["total_itens"])) {
-    $_SESSION["total_itens"] = 0;
-  }
+    if (!isset($_SESSION["quantidade_calabresa"])) {
+        $_SESSION["quantidade_calabresa"] = 0;
+    }
 
-  if (!isset($_SESSION["preco_total"])) {
-    $_SESSION["preco_total"] = 0;
-  }
+    if (!isset($_SESSION["quantidade_peperoni"])) {
+        $_SESSION["quantidade_peperoni"] = 0;
+    }
 
-  // Preço unitário do item
-  $pizza_calabresa = 15.50;
-  $pizza_peperoni = 19.50;
-  $pizza_marguerita = 25.50;
-  $pizza_portuguesa = 25.50;
-  $pizza_chocoboom = 60.50;
-  $pizza_frango_requeijao = 25.50;
+    // Faça isso para os outros sabores de pizza
 
-  // Atualiza a quantidade total de itens no pedido
-  $_SESSION["total_itens"] += $quantidade;
+    if (!isset($_SESSION["preco_total1"])) {
+        $_SESSION["preco_total1"] = 0;
+    }
 
-  // Atualiza o preço total do pedido
-  $_SESSION["preco_total"] += ($quantidade *  $pizza_calabresa);
-  $_SESSION["preco_total"] += ($quantidade * $pizza_peperoni);
-  $_SESSION["preco_total"] += ($quantidade * $pizza_marguerita);
-  $_SESSION["preco_total"] += ($quantidade *  $pizza_portuguesa);
-  $_SESSION["preco_total"] += ($quantidade * $pizza_chocoboom);
-  $_SESSION["preco_total"] += ($quantidade * $pizza_frango_requeijao);
+    if (!isset($_SESSION["preco_total2"])) {
+        $_SESSION["preco_total2"] = 0;
+    }
+
+    // Faça isso para os outros sabores de pizza
+
+    // Atualiza a quantidade total de itens no pedido
+    $_SESSION["quantidade_calabresa"] += $quantidade_calabresa;
+    $_SESSION["quantidade_peperoni"] += $quantidade_peperoni;
+    $_SESSION["quantidade_marguerita"] += $quantidade_marguerita;
+    $_SESSION["quantidade_portuguesa"] += $quantidade_portuguesa;
+    $_SESSION["quantidade_chocoboom"] += $quantidade_chocoboom;
+    $_SESSION["quantidade_frango_requeijao"] += $quantidade_frango_requeijao;
+
+    // Atualiza o preço total do pedido
+    $_SESSION["preco_total1"] += ($quantidade_calabresa * $pizza_calabresa);
+    $_SESSION["preco_total2"] += ($quantidade_peperoni * $pizza_peperoni);
+    $_SESSION["preco_total3"] += ($quantidade_marguerita * $pizza_marguerita);
+    $_SESSION["preco_total4"] += ($quantidade_portuguesa * $pizza_portuguesa);
+    $_SESSION["preco_total5"] += ($quantidade_chocoboom * $pizza_chocoboom);
+    $_SESSION["preco_total6"] += ($quantidade_frango_requeijao * $pizza_frango_requeijao);
 }
 
-$quantidade_total = isset($_SESSION["total_itens"]) ? $_SESSION["total_itens"] : 0;
-$preco_total = isset($_SESSION["preco_total"]) ? number_format($_SESSION["preco_total"], 2) : 0.00;
+$quantidade_total = isset($_SESSION["quantidade_calabresa"]) ? $_SESSION["quantidade_calabresa"] : 0;
+$preco_total = isset($_SESSION["preco_total1"]) ? number_format($_SESSION["preco_total1"], 2) : 0.00;
+?>
 
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- O resto do seu código HTML permanece inalterado -->
+</head>
+
+<body class="body1">
+    <!-- O resto do seu código HTML permanece inalterado -->
+
+    <div class="div-pedido">
+        <img src="imagens/pizza_calabresa.png" class="img-fluid2" alt="pizza-calabresa">
+        <h2 class="h2-pedidos">Pizza Calabresa</h2>
+        <p class="p-pedidos">Pizza mais amada do Brasil, calabresa, cebola, molho de tomate, mussarela.</p>
+        <div class="pedido">
+            <form action="Pedido.php" method="post">
+                <span class="item-nome">Item do Pedido</span>
+                <span class="item-preco">R$ <?php echo $pizza_calabresa; ?></span>
+                <input type="number" name="quantidade_calabresa" value="1" min="1">
+                <input type="submit" value="Confirmar Pedido">
+            </form>
+            <div class="total-pedidos">
+                <p class="p-pedidos">Quantidade Total: <?php echo $quantidade_total1; ?></p>
+                <p class="p-pedidos">Preço Total: R$ <?php echo $preco_total1; ?></p>
+                <form method="post" action="limpar_pedidos.php">
+                    <input type="submit" value="Limpar Pedido">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Repita a estrutura acima para os outros sabores de pizza -->
+</body>
+<!-- O restante do seu código HTML permanece inalterado -->
 
 ?>
 <!DOCTYPE html>
@@ -119,16 +181,16 @@ $preco_total = isset($_SESSION["preco_total"]) ? number_format($_SESSION["preco_
                 <span class="item-preco">R$ 15.50</span>
                 <div class="quantidade">
                   <!-- <button class="decrementar">-</button>-->
-                  <input type="number" name="quantidade" value="1" min="1">
+                  <input type="number" name="quantidade1" value="1" min="1">
                   <input type="submit" value="confirmar pedido">
                 </div>
               </form>
               <div class="total-pedidos">
                 <p class="p-pedidos">Quantidade Total:
-                  <?php echo $quantidade_total; ?>
+                  <?php echo $quantidade_total1; ?>
                 </p>
                 <p class="p-pedidos">Preço Total: R$
-                  <?php echo $preco_total; ?>
+                  <?php echo $preco_total1; ?>
                 </p>
                 <form method="post" action="limpar_pedidos.php">
                   <input type="submit" value="Limpar Pedido">
@@ -148,16 +210,16 @@ $preco_total = isset($_SESSION["preco_total"]) ? number_format($_SESSION["preco_
                 <span class="item-preco">R$ 15.50</span>
                 <div class="quantidade">
                   <!-- <button class="decrementar">-</button>-->
-                  <input type="number" name="quantidade" value="1" min="1">
+                  <input type="number" name="quantidade2" value="1" min="1">
                   <input type="submit" value="confirmar pedido">
                 </div>
               </form>
               <div class="total-pedidos">
                 <p class="p-pedidos">Quantidade Total:
-                  <?php echo $quantidade_total; ?>
+                  <?php echo $quantidade_total2; ?>
                 </p>
                 <p class="p-pedidos">Preço Total: R$
-                  <?php echo $preco_total; ?>
+                  <?php echo $preco_total2; ?>
                 </p>
                 <form method="post" action="limpar_pedidos.php">
                   <input type="submit" value="Limpar Pedido">
@@ -177,16 +239,16 @@ $preco_total = isset($_SESSION["preco_total"]) ? number_format($_SESSION["preco_
                 <span class="item-preco">R$ 15.50</span>
                 <div class="quantidade">
                   <!-- <button class="decrementar">-</button>-->
-                  <input type="number" name="quantidade" value="1" min="1">
+                  <input type="number" name="quantidade3" value="1" min="1">
                   <input type="submit" value="confirmar pedido">
                 </div>
               </form>
               <div class="total-pedidos">
                 <p class="p-pedidos">Quantidade Total:
-                  <?php echo $quantidade_total; ?>
+                  <?php echo $quantidade_total3; ?>
                 </p>
                 <p class="p-pedidos">Preço Total: R$
-                  <?php echo $preco_total; ?>
+                  <?php echo $preco_total3; ?>
                 </p>
                 <form method="post" action="limpar_pedidos.php">
                   <input type="submit" value="Limpar Pedido">
@@ -206,16 +268,16 @@ $preco_total = isset($_SESSION["preco_total"]) ? number_format($_SESSION["preco_
                 <span class="item-preco">R$ 15.50</span>
                 <div class="quantidade">
                   <!-- <button class="decrementar">-</button>-->
-                  <input type="number" name="quantidade" value="1" min="1">
+                  <input type="number" name="quantidade4" value="1" min="1">
                   <input type="submit" value="confirmar pedido">
                 </div>
               </form>
               <div class="total-pedidos">
                 <p class="p-pedidos">Quantidade Total:
-                  <?php echo $quantidade_total; ?>
+                  <?php echo $quantidade_total4; ?>
                 </p>
                 <p class="p-pedidos">Preço Total: R$
-                  <?php echo $preco_total; ?>
+                  <?php echo $preco_total4; ?>
                 </p>
                 <form method="post" action="limpar_pedidos.php">
                   <input type="submit" value="Limpar Pedido">
@@ -224,7 +286,7 @@ $preco_total = isset($_SESSION["preco_total"]) ? number_format($_SESSION["preco_
             </div>
           </div>
         </div>
-        <div class="col-md-4 div"> <!--1-->
+        <div class="col-md-4 div"> <!--5-->
           <div class="div-pedido">
             <img src="imagens/pizza_gigante_chocolate.png" class="img-fluid2" alt="pizza-calabresa">
             <h2 class="h2-pedidos">pizza-calabresa</h2>
@@ -235,16 +297,16 @@ $preco_total = isset($_SESSION["preco_total"]) ? number_format($_SESSION["preco_
                 <span class="item-preco">R$ 15.50</span>
                 <div class="quantidade">
                   <!-- <button class="decrementar">-</button>-->
-                  <input type="number" name="quantidade" value="1" min="1">
+                  <input type="number" name="quantidade5" value="1" min="1">
                   <input type="submit" value="confirmar pedido">
                 </div>
               </form>
               <div class="total-pedidos">
                 <p class="p-pedidos">Quantidade Total:
-                  <?php echo $quantidade_total; ?>
+                  <?php echo $quantidade_total5; ?>
                 </p>
                 <p class="p-pedidos">Preço Total: R$
-                  <?php echo $preco_total; ?>
+                  <?php echo $preco_total5; ?>
                 </p>
                 <form method="post" action="limpar_pedidos.php">
                   <input type="submit" value="Limpar Pedido">
@@ -253,7 +315,7 @@ $preco_total = isset($_SESSION["preco_total"]) ? number_format($_SESSION["preco_
             </div>
           </div>
         </div>
-        <div class="col-md-4 div"> <!--1-->
+        <div class="col-md-4 div"> <!--6-->
           <div class="div-pedido">
             <img src="imagens/pizza_frango_requeijao.png" class="img-fluid2" alt="pizza-calabresa">
             <h2 class="h2-pedidos">pizza-calabresa</h2>
@@ -264,16 +326,16 @@ $preco_total = isset($_SESSION["preco_total"]) ? number_format($_SESSION["preco_
                 <span class="item-preco">R$ 15.50</span>
                 <div class="quantidade">
                   <!-- <button class="decrementar">-</button>-->
-                  <input type="number" name="quantidade" value="1" min="1">
+                  <input type="number" name="quantidade6" value="1" min="1">
                   <input type="submit" value="confirmar pedido">
                 </div>
               </form>
               <div class="total-pedidos">
                 <p class="p-pedidos">Quantidade Total:
-                  <?php echo $quantidade_total; ?>
+                  <?php echo $quantidade_total6; ?>
                 </p>
                 <p class="p-pedidos">Preço Total: R$
-                  <?php echo $preco_total; ?>
+                  <?php echo $preco_total6; ?>
                 </p>
                 <form method="post" action="limpar_pedidos.php">
                   <input type="submit" value="Limpar Pedido">
