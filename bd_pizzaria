@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS Entregadores (
 -- Inserir dados na tabela
 INSERT INTO Entregadores (ID, Nome, Tempo_M, Frete)
 VALUES
-    (7, 'Zezinho', '45Min', 'R$ 8,00'),
+    (7, 'Godofredo O Porpeta', '45Min', 'R$ 8,00'),
     (8, 'Gugu Gaiteiro', '30Min', 'R$ 10,00');
 
 CREATE TABLE IF NOT EXISTS Cardapio (
