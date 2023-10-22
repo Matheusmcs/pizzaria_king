@@ -27,7 +27,7 @@ $preco_total_portuguesa = calcularPizza($quantidade_portuguesa, $pizza_portugues
 $preco_total_chocoboom = calcularPizza($quantidade_chocoboom, $pizza_chocoboom);
 $preco_total_frango_requeijao = calcularPizza($quantidade_frango_requeijao, $pizza_frango_requeijao);
 
-$preco_total = $preco_total_calabresa + $preco_total_peperoni + $preco_total_marguerita + $preco_total_portuguesa + $preco_total_chocoboom + $preco_total_frango_requeijao;
+$preco_total_geral = $preco_total_calabresa + $preco_total_peperoni + $preco_total_marguerita + $preco_total_portuguesa + $preco_total_chocoboom + $preco_total_frango_requeijao;
 ?>
 
 
@@ -129,6 +129,10 @@ function calcularPrecoTotalGeral() {
   // Obtenha o preço total de cada pizza
   var preco_total_calabresa = parseFloat(document.getElementById('preco_total_quantidade_calabresa').textContent);
   var preco_total_peperoni = parseFloat(document.getElementById('preco_total_quantidade_peperoni').textContent);
+  var preco_total_marguerita = parseFloat(document.getElementById('preco_total_quantidade_marguerita').textContent);
+  var preco_total_portuguesa = parseFloat(document.getElementById('preco_total_quantidade_portuguesa').textContent);
+  var preco_total_chocoboom = parseFloat(document.getElementById('preco_total_quantidade_chocoboom').textContent);
+  var preco_total_frango_requeijao = parseFloat(document.getElementById('preco_total_quantidade_frango_requeijao').textContent);
 
   // Some todos os preços totais
   var preco_total_geral = preco_total_calabresa + preco_total_peperoni + preco_total_marguerita + preco_total_portuguesa + preco_total_chocoboom + preco_total_frango_requeijao;
