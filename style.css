@@ -13,7 +13,7 @@ body.body1{
     font-family: Georgia, 'Times New Roman', Times, serif ;
 }
 .body2{
-    background-image: url(imagens/fundo\ 1.jpg);
+    background-image: url();
     background-repeat: no-repeat;
     height: 100vh;
     background-size: 100% 100%;
