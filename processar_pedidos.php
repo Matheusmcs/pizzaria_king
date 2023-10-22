@@ -1,5 +1,5 @@
 <?php
-session_start();
+/*session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $quantidade = $_POST["quantidade"];
@@ -22,5 +22,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION["preco_total"] += ($quantidade * $preco_unitario);
 
     header("Location: Pedidos.php");
-}
+}*/
 ?>

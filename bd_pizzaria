@@ -64,9 +64,12 @@ CREATE TABLE IF NOT EXISTS Cardapio (
 -- Inserir dados na tabela
 INSERT INTO Cardapio (ID, Nome, Preco, Tempo_P)
 VALUES
-    (9, 'Mussarela', 'R$ 29,90', '25Min'),
+    (9, 'frango_requeijao', 'R$ 29,90', '25Min'),
     (10, 'Portuguesa', 'R$ 35,00', '35Min'),
     (11, 'Calabresa', 'R$ 29,90', '25Min');
+    (12, 'chocoboom', 'R$ 29,90', '25Min'),
+    (13, 'marguerita', 'R$ 29,90', '25Min'),
+    (14, 'peperoni', 'R$ 29,90', '25Min'),
 
 CREATE TABLE IF NOT EXISTS Cardapio (
     ID INT PRIMARY KEY,
