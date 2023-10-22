@@ -113,10 +113,10 @@
       <div class="col-md-4 div"> <!--1-->
         <div class="div-pedido">
           <img src="imagens/pizza_calabresa.png" class="img-fluid2" alt="pizza-calabresa">
-          <h2 class="h2-pedidos">pizza-calabresa</h2>
-          <p class="p-pedidos">pizza mais amada do brasil, calabresa, cebola, molho de tomate, musareala.</p>
+          <h2 class="h2-pedidos">Pizza - Calabresa</h2>
+          <p class="p-pedidos">Calabresa, Cebola, Molho de tomate.</p>
           <div class="pedido">
-            <span class="item-nome">Item do Pedido</span>
+            <span class="item-nome">Valor do Pedido:</span>
             <span class="item-preco">R$ 10.00</span>
             <div class="quantidade">
               <button class="decrementar">-</button>
@@ -130,10 +130,10 @@
       <div class="col-md-4 div"> <!--2-->
         <div class="div-pedido">
           <img src="imagens/pizza_peperoni.png" class="img-fluid2" alt="pizza-calabresa">
-          <h2 class="h2-pedidos">pizza-calabresa</h2>
-          <p class="p-pedidos">pizza mais amada do brasil, calabresa, cebola, molho de tomate, musareala.</p>
+          <h2 class="h2-pedidos">Pizza - Peperoni</h2>
+          <p class="p-pedidos">Musssarela, Peperoni</p>
           <div class="pedido">
-            <span class="item-nome">Item do Pedido</span>
+            <span class="item-nome">Valor do Pedido:</span>
             <span class="item-preco">R$ 10.00</span>
             <div class="quantidade">
               <button class="decrementar">-</button>
@@ -148,10 +148,10 @@
       <div class="col-md-4 div"> <!--3-->
         <div class="div-pedido">
           <img src="imagens/pizza_marguerita.png" class="img-fluid2" alt="pizza-calabresa">
-          <h2 class="h2-pedidos">pizza-calabresa</h2>
-          <p class="p-pedidos">pizza mais amada do brasil, calabresa, cebola, molho de tomate, musareala.</p>
+          <h2 class="h2-pedidos">Pizza - Marguerita</h2>
+          <p class="p-pedidos">Manjericão, Mussarela e Rodelas de tomate.</p>
           <div class="pedido">
-            <span class="item-nome">Item do Pedido</span>
+            <span class="item-nome">Valor do Pedido:</span>
             <span class="item-preco">R$ 10.00</span>
             <div class="quantidade">
               <button class="decrementar">-</button>
@@ -165,10 +165,10 @@
       <div class="col-md-4 div"> <!--4-->
         <div class="div-pedido">
           <img src="imagens/pizza_portuguesa.png" class="img-fluid2" alt="pizza-calabresa">
-          <h2 class="h2-pedidos">pizza-calabresa</h2>
-          <p class="p-pedidos">pizza mais amada do brasil, calabresa, cebola, molho de tomate, musareala.</p>
+          <h2 class="h2-pedidos">Pizza - Portuguêsa</h2>
+          <p class="p-pedidos">Cebola, Ervilha, Mussarela, Ovos, Palmito, Presunto.</p>
           <div class="pedido">
-            <span class="item-nome">Item do Pedido</span>
+            <span class="item-nome">Valor do Pedido:</span>
             <span class="item-preco">R$ 10.00</span>
             <div class="quantidade">
               <button class="decrementar">-</button>
@@ -182,10 +182,10 @@
       <div class="col-md-4 div"> <!--5-->
         <div class="div-pedido">
           <img src="imagens/pizza_gigante_chocolate.png" class="img-fluid2" alt="pizza-calabresa">
-          <h2 class="h2-pedidos">pizza-calabresa</h2>
-          <p class="p-pedidos">pizza mais amada do brasil, calabresa, cebola, molho de tomate, musareala.</p>
+          <h2 class="h2-pedidos">Pizza - Chocolate</h2>
+          <p class="p-pedidos">Chocolate, Granulado, Morango.</p>
           <div class="pedido">
-            <span class="item-nome">Item do Pedido</span>
+            <span class="item-nome">Valor do Pedido:</span>
             <span class="item-preco">R$ 10.00</span>
             <div class="quantidade">
               <button class="decrementar">-</button>
@@ -199,10 +199,10 @@
       <div class="col-md-4 div"> <!--6-->
         <div class="div-pedido">
           <img src="imagens/pizza_frango_requeijao.png" class="img-fluid2" alt="pizza-calabresa">
-          <h2 class="h2-pedidos">pizza-calabresa</h2>
-          <p class="p-pedidos">pizza mais amada do brasil, calabresa, cebola, molho de tomate, musareala.</p>
+          <h2 class="h2-pedidos">Pizza - Frango e Catupiry</h2>
+          <p class="p-pedidos">Frango, Catupity.</p>
           <div class="pedido">
-            <span class="item-nome">Item do Pedido</span>
+            <span class="item-nome">Valor do Pedido:</span>
             <span class="item-preco">R$ 10.00</span>
             <div class="quantidade">
               <button class="decrementar">-</button>
