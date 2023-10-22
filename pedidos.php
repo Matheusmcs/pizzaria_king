@@ -289,7 +289,7 @@ function calcularPrecoTotalGeral() {
           </div>
         
               <input type="submit" value="adicionar ao carrinho">
-              <h2>Preço total geral: R$ <span id="preco_total_geral"><?php echo number_format($preco_total, 2, ',', '.'); ?></span></h2>
+              <h2>Preço total geral: R$ <span id="preco_total_geral"><?php echo number_format($preco_total_geral, 2, ',', '.'); ?></span></h2>
   
             
     </form>
