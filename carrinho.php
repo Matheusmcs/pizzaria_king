@@ -21,22 +21,22 @@
         <table class="tbl-cart" cellpadding="10" cellspacing="1">
         <tbody>
         <tr>
-        <th style="text-align:left;">Name</th>
-        <th style="text-align:left;">Code</th>
-        <th style="text-align:right;" width="5%">Quantity</th>
-        <th style="text-align:right;" width="10%">Unit Price</th>
-        <th style="text-align:right;" width="10%">Price</th>
-        <th style="text-align:center;" width="5%">Remove</th>
+        <th style="text-align:left;">Nome</th>
+        <th style="text-align:left;">Código</th>
+        <th style="text-align:right;" width="5%">quantidade</th>
+        <th style="text-align:right;" width="10%">Preço Unitario</th>
+        <th style="text-align:right;" width="10%">Total</th>
+        <th style="text-align:center;" width="5%">Remover</th>
         </tr>	
         <?php		
             foreach ($_SESSION["item_carro"] as $item){
-                $item_price = $item["quantidadeNumeros"]*$item["precoItens"];
+                $item_preco = $item["quantidadeNumeros"]*$item["precoItens"];
                 ?>
                         <tr>
-                        <td><img src="<?php echo $item["image"]; ?>" class="cart-item-image" /><?php echo $item["name"]; ?></td>
+                        <td><img src="<?php echo $item["img"]; ?>" class="cart-item-image" /><?php echo $item["h2-pedidos"]; ?></td>
                         <td><?php echo $item["code"]; ?></td>
-                        <td style="text-align:right;"><?php echo $item["quantity"]; ?></td>
-                        <td  style="text-align:right;"><?php echo "$ ".$item["price"]; ?></td>
+                        <td style="text-align:right;"><?php echo $item["quantidade-numero"]; ?></td>
+                        <td  style="text-align:right;"><?php echo "$ ".$item["item-preco"]; ?></td>
                         <td  style="text-align:right;"><?php echo "$ ". number_format($item_price,2); ?></td>
                         <td style="text-align:center;"><a href="index.php?action=remove&code=<?php echo $item["code"]; ?>" class="btnRemoveAction"><img src="icone_deletar.png" alt="Remove Item" /></a></td>
                         </tr>
