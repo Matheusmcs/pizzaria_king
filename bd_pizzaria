@@ -37,9 +37,9 @@ CREATE TABLE IF NOT EXISTS Funcionarios (
 -- Inserir dados na tabela
 INSERT INTO Funcionarios (ID, Nome, Cargo, Turno)
 VALUES
-    (6, 'Flavio Flamengo', 'Zelador', '8:00 a 18:00'),
-    (7, 'Mario', 'Pizzaiolo', '8:30 a 17:00'),
-    (8, 'Ana', 'Atendente', '9:00 a 17:00');
+    (4, 'Flavio Flamengo', 'Zelador', '8:00 a 18:00'),
+    (5, 'Mario', 'Pizzaiolo', '8:30 a 17:00'),
+    (6, 'Ana', 'Atendente', '9:00 a 17:00');
 
 CREATE TABLE IF NOT EXISTS Entregadores (
     ID INT PRIMARY KEY,
@@ -67,16 +67,6 @@ VALUES
     (9, 'frango_requeijao', 'R$ 29,90', '25Min'),
     (10, 'Portuguesa', 'R$ 35,00', '35Min'),
     (11, 'Calabresa', 'R$ 29,90', '25Min');
-    (12, 'chocoboom', 'R$ 29,90', '25Min'),
-    (13, 'marguerita', 'R$ 29,90', '25Min'),
-    (14, 'peperoni', 'R$ 29,90', '25Min'),
-
-CREATE TABLE IF NOT EXISTS Cardapio (
-    ID INT PRIMARY KEY,
-    Nome VARCHAR(502),
-    Preco VARCHAR(1002),
-    Tempo_P VARCHAR(125)
-);
 
 CREATE TABLE IF NOT EXISTS Forma_De_Pagamento (
     ID INT PRIMARY KEY,
@@ -90,7 +80,7 @@ INSERT INTO Forma_De_Pagamento (ID, Bandeira, Tipo, Vezes)
 VALUES
     (12, 'Mastercard', 'Crédito', '2X'),
     (13, 'Visa', 'Débito', '1X'),
-    (14, 'Mastercard', 'Crédito', '3X');
+    (14, 'American Express', 'Crédito', '3X');
 
 CREATE TABLE IF NOT EXISTS Promocoes (
     ID INT PRIMARY KEY,
@@ -104,6 +94,4 @@ INSERT INTO Promocoes (ID, Nome, Validade, Valor)
 VALUES
     (15, 'Calabresa Com Queijo', '12/10/2023 a 15/10/2023', 'R$ 45,00'),
     (16, 'Meia Portuguesa e Calabresa', '16/10/2023 a 20/10/2023', 'R$ 35,00'),
-    (17, 'Mussarela Com Cheddar', '21/10/2023 a 25/10/2023', 'R$ 32,00');
-
-
+    (17, 'Mussarela Com Cheddar', '21/10/2023 a 25/10/2023', R$ 32,00');
