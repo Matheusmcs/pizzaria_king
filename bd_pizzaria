@@ -4,29 +4,6 @@ CREATE DATABASE IF NOT EXISTS BD_Pizzaria;
 -- Usar o banco de dados selecionado
 USE BD_Pizzaria;
 
-CREATE TABLE Usuarios (
-    ID INT PRIMARY KEY,
-    Nome VARCHAR(340),
-    Email VARCHAR(300),
-    Telefone VARCHAR(15)
-);
-
--- Inserir dados na tabela
-INSERT INTO Usuarios (ID, Nome, Email, Telefone)
-VALUES
-    (1, 'Atumalaca', 'atumalaca@gmail.com', '(11) 4002-8922'),
-    (2, 'Robinho', 'robin@email.com', '(11) 9888-5432'),
-    (3, 'Daniel Alves', 'dani@email.com', '(11) 5255-5555');
-
--- Exemplo de atualização de um cliente (substitua os valores pelos corretos)
-UPDATE Usuarios
-SET Nome = 'NovoNome', Email = 'novo@email.com', Telefone = 'NovoTelefone'
-WHERE ID = 1;
-
--- Exemplo de exclusão de um cliente (substitua o ID pelo correto)
-DELETE FROM Usuarios
-WHERE ID = 1;
-
 CREATE TABLE IF NOT EXISTS Funcionarios (
     ID INT PRIMARY KEY,
     Nome VARCHAR(520),
@@ -69,7 +46,7 @@ VALUES
     (11, 'Calabresa', 'R$ 29,90', '25Min');
     (12, 'chocoboom', 'R$ 29,90', '25Min'),
     (13, 'marguerita', 'R$ 29,90', '25Min'),
-    (14, 'peperoni', 'R$ 29,90', '25Min'),
+    (14, 'peperoni', 'R$ 29,90', '25Min')
 
 CREATE TABLE IF NOT EXISTS Cardapio (
     ID INT PRIMARY KEY,
