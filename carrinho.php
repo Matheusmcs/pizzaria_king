@@ -12,7 +12,7 @@
         <div id="carrinho">
         <div class="txt-heading">Carrinho</div>
         
-        <a id="btnEmpty" href="pedidos.php">Carrinho está vazio</a>
+        <a id="btnEmpty" href="pedidos.php">Fazer pedido</a>
         <?php
         if(isset($_SESSION["item_carro"])){
             $quantidadeNumeros = 0;
@@ -29,15 +29,15 @@
         <th style="text-align:center;" width="5%">Remover</th>
         </tr>	
         <?php		
-            foreach ($_SESSION["item_carro"] as $item){
-                $item_preco = $item["quantidadeNumeros"]*$item["precoItens"];
+            foreach ($_SESSION["quantidade_calabresa"] as $item){
+                $item_preco = $preco_total_calabresa};
                 ?>
                         <tr>
                         <td><img src="<?php echo $item["img"]; ?>" class="cart-item-image" /><?php echo $item["h2-pedidos"]; ?></td>
                         <td><?php echo $item["code"]; ?></td>
-                        <td style="text-align:right;"><?php echo $item["quantidade-numero"]; ?></td>
-                        <td  style="text-align:right;"><?php echo "$ ".$item["item-preco"]; ?></td>
-                        <td  style="text-align:right;"><?php echo "$ ". number_format($item_price,2); ?></td>
+                        <td style="text-align:right;"><?php echo $item["quantidade_calabresa"]; ?></td>
+                        <td  style="text-align:right;"><?php echo "$ ".$item["pizza_calabresa"]; ?></td>
+                        <td  style="text-align:right;"><?php echo "$ ". number_format($item_price); ?></td>
                         <td style="text-align:center;"><a href="index.php?action=remove&code=<?php echo $item["code"]; ?>" class="btnRemoveAction"><img src="icone_deletar.png" alt="Remove Item" /></a></td>
                         </tr>
                         <?php
@@ -57,7 +57,7 @@
           <?php
         } else {
         ?>
-        <div class="no-records">Your Cart is Empty</div>
+        <div class="no-records">Seu carrinho está vazio!</div>
         <?php 
         }
         ?>
