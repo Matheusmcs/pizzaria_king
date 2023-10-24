@@ -308,7 +308,7 @@ $preco_total_geral = $preco_total_calabresa + $preco_total_peperoni + $preco_tot
           <div class="div-pedido">
             <img src="imagens/pizza_frango_requeijao.png" class="img-fluid2" alt="pizza-calabresa">
             <h2 class="h2-pedidos">Pizza - Frango e Catupiry</h2>
-            <p class="p-pedidos">Frango, Catupity.</p>
+            <p class="p-pedidos">Frango, Catupiry.</p>
             <div class="pedido">
               <h2>Preço R$
                 <?php echo $pizza_frango_requeijao ?>
