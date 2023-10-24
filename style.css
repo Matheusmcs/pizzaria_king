@@ -1,6 +1,6 @@
 @charset "utf8";
 
-body.body1{
+body.body1 {
     background-image: linear-gradient(to bottom, #00000087, rgb(253 194 0));
     background-size: 100% 100%;
     background-position: top left;
@@ -9,10 +9,13 @@ body.body1{
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
-.titulo {color: #FF1B02;
-    font-family: Georgia, 'Times New Roman', Times, serif ;
+
+.titulo {
+    color: #FF1B02;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.body2{
+
+.body2 {
     background-image: url();
     background-repeat: no-repeat;
     height: 100vh;
@@ -21,13 +24,16 @@ body.body1{
     background-attachment: fixed;
     ;
 }
-.body3{
-background-image: linear-gradient(to bottom, gray, black) ;
+
+.body3 {
+    background-image: linear-gradient(to bottom, gray, rgb(253 194 0));
 }
-.p-inicio{
-color: #ccc;
+
+.p-inicio {
+    color: #ccc;
 }
-div.container{
+
+div.container {
     width: 400px;
     height: 300px;
     background-color: rgb(255, 255, 255, 0.3);
@@ -37,9 +43,10 @@ div.container{
     margin: 0 auto;
     margin-top: 120px;
     text-align: center;
-   
+
 }
-div.containerII{
+
+div.containerII {
     width: 400px;
     height: 360px;
     background-color: rgb(255, 255, 255, 0.3);
@@ -51,17 +58,19 @@ div.containerII{
     text-align: center;
     padding-top: 15px;
 }
-div.container img{
+
+div.container img {
     width: 120px;
     height: 120px;
     margin-top: -60px;
     margin-bottom: 30px;
 }
-.input{
-    
+
+.input {
+
     height: 40px;
     width: 80%;
-    font-size: 18px; 
+    font-size: 18px;
     margin-bottom: 10px;
     background-color: #fff;
     padding-left: 40px;
@@ -70,19 +79,23 @@ div.container img{
     background-position: 10px;
     border-radius: 10px;
 }
-input.email{
-    background-image: url("imagens/icone-usuario.png");
-    
-}
-input.nome_cliente{
+
+input.email {
     background-image: url("imagens/icone-usuario.png");
 
 }
-input.senha{
+
+input.nome_cliente {
+    background-image: url("imagens/icone-usuario.png");
+
+}
+
+input.senha {
     background-image: url("imagens/icone-cadeado.png");
 
 }
-input.submit{
+
+input.submit {
     color: #fff;
     background-color: #f79300;
     border: 2px solid #db7d00;
@@ -96,17 +109,21 @@ input.submit{
     background: -moz-linear-gradient(to bottom, #faa600, #f68a00);
     background: -o-linear-gradient(to bottom, #faa600, #f68a00);
 }
-.login-link{
+
+.login-link {
     margin-left: 40px;
 }
-#imagem-pizza{
+
+#imagem-pizza {
     margin-right: 800px;
 }
-.caixa-entrada{
+
+.caixa-entrada {
     border: solid 1px black;
     border-radius: 10px;
 }
-.btn{
+
+.btn {
     display: inline-block;
     font-weight: 400;
     text-align: center;
@@ -122,39 +139,61 @@ input.submit{
     line-height: 1.5;
     border-radius: 0.25rem;
 }
-.nav{
+
+.nav {
     background-color: black;
     padding: 10px;
 
 
 }
-.p2{
-    color: white;
+
+.p2 {
+    color: black;
 }
-.div-1{
+
+.a3 {
+    margin-top: 30px;
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
+.div-1 {
     margin: auto;
     background-color: 255, 255, 255, 0.3;
 }
-.div-2{
+
+.div-2 {
     width: 100px;
     height: 500px;
     border: solid 1px;
-    
+
 }
-.div-inicio{
+
+.div-inicio {
     margin: auto;
-margin-bottom: 10px;
+    margin-bottom: 10px;
 }
-.div{
-    border:solid 1px ;
+
+.div {
+    border: solid 1px;
     width: 50px;
     box-shadow: 5px 5px 10px 2px #00000042;
     border-radius: 10px;
-    padding-bottom: 5px ;
+    padding-bottom: 5px;
 }
-.div-pedido{
-    text-align: center;     
+
+.div-pedido {
+    text-align: center;
 }
+
 .container-fluid2 {
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
@@ -166,72 +205,85 @@ margin-bottom: 10px;
     padding: 0px;
 }
 
-#mainSlider .carousel-inner #mainSlider .carousel-item{
+#mainSlider .carousel-inner #mainSlider .carousel-item {
     height: 90vh;
-} 
+}
+
 #carouselExampleAutoplaying .img-fluid {
-    width: 300px; /* Defina a largura desejada */
-    height: 200px; /* Defina a altura desejada */
-  }
-  .img-fluid2{
+    width: 300px;
+    /* Defina a largura desejada */
+    height: 200px;
+    /* Defina a altura desejada */
+}
+
+.img-fluid2 {
     width: 200px;
-  }
-  .logo{
+}
+
+.logo {
     color: white;
-  }
-  .a-logo{
+}
+
+.a-logo {
     margin-right: 750px;
     text-decoration: none;
-  }
-  .a-inicio{
+}
+
+.a-inicio {
     margin-right: 5px;
-  }
-  .a-dropdown{
+}
+
+.a-dropdown {
     background-color: white;
     color: white;
-  }
-  .navbar-brand {
+}
+
+.navbar-brand {
     padding-top: var(--bs-navbar-brand-padding-y);
     padding-bottom: var(--bs-navbar-brand-padding-y);
-     margin-right: var(--bs-navbar-brand-margin-end); 
+    margin-right: var(--bs-navbar-brand-margin-end);
     font-size: var(--bs-navbar-brand-font-size);
     color: var(--bs-navbar-brand-color);
     text-decoration: none;
     white-space: nowrap;
 }
-  #grosso{
+
+#grosso {
     color: black;
-    border:solid 1px;
+    border: solid 1px;
     background-color: rgb(253, 194, 0);
     border-radius: 10px;
     padding: 2px;
 
-  }
-  .pedido {
-  /*  display: flex;*/
+}
+
+.pedido {
+    /*  display: flex;*/
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
-  }
-  
-  .quantidade {
+}
+
+.quantidade {
     display: flex;
     align-items: center;
-  }
-  
-  .decrementar, .incrementar {
+}
+
+.decrementar,
+.incrementar {
     background-color: #007BFF;
     color: #fff;
     padding: 5px 10px;
     border: none;
     cursor: pointer;
     font-weight: bold;
-  }
-  
-  .quantidade-numero {
+}
+
+.quantidade-numero {
     margin: 0 10px;
-  }
-  .nav-link1 {
+}
+
+.nav-link1 {
     display: block;
     padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
     font-size: var(--bs-nav-link-font-size);
@@ -240,8 +292,9 @@ margin-bottom: 10px;
     text-decoration: none;
     background: 0 0;
     border: 0;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
 }
+
 .row {
     margin: 10px;
     --bs-gutter-x: -0.5rem;
@@ -257,12 +310,14 @@ margin-bottom: 10px;
     width: 95%;
     margin: auto;
 }
+
 .navbar-expand .navbar-nav .dropdown-menu {
     position: absolute;
     border: 1px solid #ccc;
     margin-left: 1000px;
 }
-.footer{
+
+.footer {
     background-color: black;
     color: white;
 }
@@ -271,34 +326,30 @@ margin-bottom: 10px;
     flex: 0 0 auto;
     width: 32.333333%;
 }
+
 @media (max-width: 575.98px) {
-    .a-logo{
+    .a-logo {
         margin-right: 200px;
         text-decoration: none;
-      }
+    }
 
 }
-    
-   
+
+
 
 
 /*// `md` applies to small devices (landscape phones, less than 768px)*/
-@media (min-width: 576px) and (max-width: 767.98px) { 
-    .a-logo{
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .a-logo {
         margin-right: 200px;
         text-decoration: none;
-      }
-    
+    }
+
 }
-        
+
 
 /*// `lg` applies to medium devices (tablets, less than 992px)*/
-@media (min-width: 768px) and (max-width: 991.98px) { 
-   
- }
+@media (min-width: 768px) and (max-width: 991.98px) {}
 
 /*// `xl` applies to large devices (desktops, less than 1200px)*/
-@media (min-width:992px) and (max-width: 1199.98px) { 
-   
-    
-}
+@media (min-width:992px) and (max-width: 1199.98px) {}
