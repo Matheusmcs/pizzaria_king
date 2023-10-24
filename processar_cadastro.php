@@ -3,7 +3,7 @@
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             include_once('conexao.php');
             $email = $_POST["email"];
-        $senha = /*password_hash(*/ $_POST["senha"]/*, PASSWORD_BCRYPT)*/;
+        $senha = password_hash( $_POST["senha"], PASSWORD_BCRYPT);
            /* $confirmar_senha = $_POST["confirmar_senha"];*/
             $nome = $_POST["nome"];
             $endereco = $_POST["endereco"];
