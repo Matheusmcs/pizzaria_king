@@ -236,7 +236,6 @@ margin-bottom: 10px;
   /*  display: flex;*/
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
   }
   
   .quantidade {
@@ -295,6 +294,12 @@ margin-bottom: 10px;
 .col-md-4 {
     flex: 0 0 auto;
     width: 32.333333%;
+}
+.item-quantidade {
+    text-align: center;
+    background-image: linear-gradient(to right,rgb(253, 194, 0), transparent );
+    color: black;
+    border-radius: 10px;
 }
 @media (max-width: 575.98px) {
     .a-logo{
