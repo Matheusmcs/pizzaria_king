@@ -1,10 +1,10 @@
 <?php
 
-if(!empty($_GET['id']))
+if(!empty($_GET['ID']))
 {
     include_once('conexao.php');
 
-    $id = $_GET['id'];
+    $id = $_GET['ID'];
 
     $sqlSelect = "SELECT *  FROM promocoes WHERE ID=$id";
 
@@ -12,7 +12,7 @@ if(!empty($_GET['id']))
 
     if($result->num_rows > 0)
     {
-        $sqlDelete = "DELETE FROM promocoes WHERE id=$id";
+        $sqlDelete = "DELETE FROM promocoes WHERE ID=$id";
         $resultDelete = $conexao->query($sqlDelete);
     }
 }

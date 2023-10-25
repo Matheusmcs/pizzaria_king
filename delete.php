@@ -16,6 +16,6 @@ if(!empty($_GET['id']))
         $resultDelete = $conexao->query($sqlDelete);
     }
 }
-header('Location: tabela_funcionario.php');
+header('Location: tabela_usuario.php');
    
 ?>

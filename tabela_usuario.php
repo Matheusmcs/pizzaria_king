@@ -5,7 +5,6 @@ include_once('conexao.php');
 $sql = "SELECT * FROM usuarios ORDER BY id DESC";
 
 $result =$conexao->query($sql);
-$resultFuncionario =$conexao->query($sqlFuncionarios);
 
 
 ?>

@@ -44,6 +44,7 @@ $result =$conexao->query($sql);
          ?>
       </tbody>
     </table>
+    <a href="adiciCard.php">adiciona</a>
 </div>
 
 

@@ -1,14 +1,13 @@
 @charset "utf8";
 
 body.body1{
-    background-image: linear-gradient(to bottom, #00000087, rgb(253 194 0));
-    background-size: 100% 100%;
-    background-position: top left;
-    height: 100vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-}
+    
+        background-color: crimson;
+      
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
 .titulo {color: #FF1B02;
     font-family: Georgia, 'Times New Roman', Times, serif ;
 }
@@ -224,18 +223,18 @@ margin-bottom: 10px;
     text-decoration: none;
     white-space: nowrap;
 }
-  #grosso{
-    color: black;
-    border:solid 1px;
-    background-color: rgb(253, 194, 0);
+#grosso {
+    color: yellow;
+    
     border-radius: 10px;
-    padding: 2px;
-
-  }
+    padding: 2px;}
   .pedido {
   /*  display: flex;*/
     justify-content: space-between;
     align-items: center;
+  }
+  #pred{
+    color: red;
   }
   
   .quantidade {
@@ -294,6 +293,7 @@ margin-bottom: 10px;
 .col-md-4 {
     flex: 0 0 auto;
     width: 32.333333%;
+    background-color: bisque;
 }
 .item-quantidade {
     text-align: center;

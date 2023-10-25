@@ -44,6 +44,7 @@ $result =$conexao->query($sql);
          ?>
       </tbody>
     </table>
+    <a href="adiciFunci.php">adicionar</a>
 </div>
 
 
