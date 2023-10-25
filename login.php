@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   if ($row && password_verify($password, $row['password'])) {
     $_SESSION['user_id'] = $row['id'];
-    header("Location: dashboard.php");
+    header("Location: pedidos.php");
   } else {
     echo "Credenciais inválidas.";
   }
