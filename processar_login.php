@@ -25,7 +25,7 @@
             $_SESSION['email'] = $email;
             $_SESSION['senha'] = $senha;
             // Redirecione usando header
-            header('Location: inicio.php');
+            header('Location: pedidos.php');
             exit();
         }
     }

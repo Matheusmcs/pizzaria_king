@@ -4,6 +4,8 @@ include_once('conexao.php');
 
 $sql = "SELECT * FROM cardapio ORDER BY ID DESC";
 $result = $conexao->query($sql);
+
+
 ?>
 
 <!DOCTYPE html>
