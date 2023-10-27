@@ -12,7 +12,7 @@ body.body1{
     font-family: Georgia, 'Times New Roman', Times, serif ;
 }
 .body2{
-    background-image: url();
+    background-image: url(imagens/papelpizza.png);
     background-repeat: no-repeat;
     height: 100vh;
     background-size: 100% 100%;
