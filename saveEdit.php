@@ -2,7 +2,7 @@
 include_once('conexao.php');
 
 if(isset($_POST['update'])){
-    $id = $_POST['id'];
+    $id = $_POST['usuario_id'];
     $email = $_POST["email"];
     $senha = /*password_hash(*/ $_POST["senha"]/*, PASSWORD_BCRYPT)*/;
        /* $confirmar_senha = $_POST["confirmar_senha"];*/
@@ -14,7 +14,7 @@ if(isset($_POST['update'])){
         $result = $conexao->query($sqlUpdate);
 
     }
-    header('Location: tabela.php');
+    header('Location: tabela_usuario.php');
 
 
 

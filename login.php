@@ -1,30 +1,27 @@
 <?php
-
 session_start();
-
 // Conexão com o banco de dados SQLite
-$db = new Sqlite3('bd_pizzaria');
+include_once('conexao.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $username = $_POST['username'];
-  $password = $_POST['password'];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
 
-  // Verifique as credenciais no banco de dados
-  $query = $db->prepare("SELECT * FROM users WHERE username = :username");
-  $query->bindValue(':username', $username, SQLITE3_TEXT);
-  $result = $query->execute();
-  $row = $result->fetchArray();
+    // Verifique as credenciais no banco de dados
+    $query = $db->prepare("SELECT * FROM usuarios WHERE email = :email");
+    $query->bindValue(':email', $email, SQLITE3_TEXT);
+    $result = $query->execute();
+    $row = $result->fetchArray();
 
-  if ($row && password_verify($password, $row['password'])) {
-    $_SESSION['user_id'] = $row['id'];
-    header("Location: pedidos.php");
-  } else {
-    echo "Credenciais inválidas.";
-  }
+    if ($row && password_verify($senha, $row['senha'])) {
+        $_SESSION['usuario_id'] = $row['usuario_id'];
+        header("Location: dashboard.php"); // Redireciona para a página após o login bem-sucedido
+    } else {
+        echo "Credenciais inválidas.";
+    }
+
 }
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="pt-br">

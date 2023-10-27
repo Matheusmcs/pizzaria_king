@@ -33,7 +33,7 @@ $result =$conexao->query($sql);
         <?php
         while($user_data = mysqli_fetch_assoc($result)){
             echo "<tr>";
-            echo "<td>".$user_data['id']."</td>";
+            echo "<td>".$user_data['usuario_id']."</td>";
             echo "<td>".$user_data['nome']."</td>";
             echo "<td>".$user_data['email']."</td>";
             echo "<td>".$user_data['senha']."</td>";

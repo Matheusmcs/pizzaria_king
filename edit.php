@@ -3,7 +3,7 @@
 if (!empty($_GET['id'])) {
     include_once('conexao.php');
     $id = $_GET['id'];
-    $sqlSelect = "SELECT *FROM usuarios where id=$id";
+    $sqlSelect = "SELECT *FROM usuarios where usuario_id=$id";
     $result = $conexao->query($sqlSelect);
     
     if($result->num_rows > 0) {
@@ -15,7 +15,7 @@ if (!empty($_GET['id'])) {
        $endereco = $user_date["endereco"];
        $telefone = $user_date["telefone"];
     }}else{
-    header('Location: tabela.php');
+    header('Location: tabela_usuario.php');
 }}
 ?>
 

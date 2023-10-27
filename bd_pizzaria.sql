@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 25-Out-2023 às 23:22
+-- Tempo de geração: 26-Out-2023 às 23:50
 -- Versão do servidor: 8.0.31
 -- versão do PHP: 8.0.26
 
@@ -34,18 +34,47 @@ CREATE TABLE IF NOT EXISTS `cardapio` (
   `Preco` varchar(1002) DEFAULT NULL,
   `Tempo_P` varchar(125) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Extraindo dados da tabela `cardapio`
 --
 
 INSERT INTO `cardapio` (`ID`, `Nome`, `Preco`, `Tempo_P`) VALUES
-(9, 'frango_requeijao', 'R$ 29,90', '25Min'),
-(10, 'Portuguesa', 'R$ 25,50', '35Min'),
-(11, 'Calabresa com queijo', '$ 15,50', '25min'),
-(14, 'peperoni', 'R$ 15,00', '25min'),
-(15, 'marguerita', 'R$25,50', '30min');
+(20, 'frango', '25.50', '25min'),
+(21, 'portuguesa', '35.50', '30min'),
+(22, 'chocolate', '39.99', '30min'),
+(19, 'calabresa', '15.50', '25min');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `carrinho`
+--
+
+DROP TABLE IF EXISTS `carrinho`;
+CREATE TABLE IF NOT EXISTS `carrinho` (
+  `carrinho_id` int NOT NULL AUTO_INCREMENT,
+  `usuario_id` int DEFAULT NULL,
+  `pizza_nome` varchar(255) DEFAULT NULL,
+  `quantidade` int DEFAULT NULL,
+  `preco_total` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`carrinho_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
+
+--
+-- Extraindo dados da tabela `carrinho`
+--
+
+INSERT INTO `carrinho` (`carrinho_id`, `usuario_id`, `pizza_nome`, `quantidade`, `preco_total`) VALUES
+(1, 0, 'quantidade_chocolate', 1, '0.00'),
+(2, 0, 'chocolate', 1, '39.99'),
+(3, 0, 'quantidade_portuguesa', 0, '0.00'),
+(4, 0, 'portuguesa', 0, '0.00'),
+(5, 0, 'quantidade_frango', 0, '0.00'),
+(6, 0, 'frango', 0, '0.00'),
+(7, 0, 'quantidade_calabresa', 0, '0.00'),
+(8, 0, 'calabresa', 0, '0.00');
 
 -- --------------------------------------------------------
 
@@ -126,13 +155,13 @@ INSERT INTO `promocoes` (`ID`, `Nome`, `Validade`, `Valor`) VALUES
 
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `usuario_id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `senha` varchar(255) NOT NULL,
   `endereco` varchar(255) NOT NULL,
   `telefone` varchar(20) NOT NULL,
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`usuario_id`),
   UNIQUE KEY `email` (`email`)
 ) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb3;
 
@@ -140,7 +169,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `endereco`, `telefone`) VALUES
+INSERT INTO `usuarios` (`usuario_id`, `nome`, `email`, `senha`, `endereco`, `telefone`) VALUES
 (15, 'marwin barbosa silva soares', 'marwinsoares070@gmail.com', '123456789', 'rua lagoa do campelo', '11959237933');
 COMMIT;
 

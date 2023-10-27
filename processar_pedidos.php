@@ -1,26 +1,45 @@
 <?php
-/*session_start();
+session_start();
+include_once('conexao.php');
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $quantidade = $_POST["quantidade"];
+if (isset($_SESSION['usuario_id'])) {
+    $usuario_id = $_SESSION['usuario_id'];
+} else {
+    header('Location: login.php');
+}
 
-    if (!isset($_SESSION["total_itens"])) {
-        $_SESSION["total_itens"] = 0;
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Inicialize a variável $preco_total
+    $preco_total = 0;
+
+    foreach ($_POST as $pizza_nome => $quantidade) {
+        // Certifique-se de que a quantidade é um número inteiro
+        $quantidade = intval($quantidade);
+
+        // Realize qualquer validação ou verificação necessária
+
+        // Consulte o banco de dados para obter o preço da pizza com base no nome da pizza
+        $sql = "SELECT Preco FROM cardapio WHERE Nome = '$pizza_nome'";
+        $result = $conexao->query($sql);
+        $row = $result->fetch_assoc();
+        $pizza_preco = $row['Preco_total'];
+
+        // Calcule o preço total para o item atual
+        $item_preco_total = $quantidade * $pizza_preco;
+
+        
+        // Acumule o preço total de todos os itens
+        $preco_total += $item_preco_total;
+
+        // Adicione o pedido ao carrinho no banco de dados (exemplo)
+        // Você deve criar uma tabela no banco de dados para armazenar os pedidos do carrinho
+        $sql = "INSERT INTO carrinho (usuario_id, pizza_nome, quantidade, preco_total) VALUES ('?,?, ?, ?)";
+        $conexao->query($sql);
     }
-
-    if (!isset($_SESSION["preco_total"])) {
-        $_SESSION["preco_total"] = 0;
-    }
-
-    // Preço unitário do item
-    $preco_unitario = 10.00;
-
-    // Atualiza a quantidade total de itens no pedido
-    $_SESSION["total_itens"] += $quantidade;
-
-    // Atualiza o preço total do pedido
-    $_SESSION["preco_total"] += ($quantidade * $preco_unitario);
-
-    header("Location: Pedidos.php");
-}*/
+    
+    // Redirecionar para a página do carrinho (substitua 'carrinho.php' pelo URL correto)
+} else {
+    // Redirecionar para a página de erro ou outra página adequada em caso de acesso direto a este arquivo
+    header('Location: erro.php');
+}
 ?>
