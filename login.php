@@ -1,25 +1,30 @@
 <?php
 session_start();
-// Conexão com o banco de dados SQLite
-include_once('conexao.php');
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    include_once('conexao.php');
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-    // Verifique as credenciais no banco de dados
-    $query = $db->prepare("SELECT * FROM usuarios WHERE email = :email");
-    $query->bindValue(':email', $email, SQLITE3_TEXT);
-    $result = $query->execute();
-    $row = $result->fetchArray();
+    $sql = "SELECT senha FROM usuarios WHERE email = ?";
+    $stmt = $conexao->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $stmt->bind_result($senhaHash);
+    $stmt->fetch();
 
-    if ($row && password_verify($senha, $row['senha'])) {
-        $_SESSION['usuario_id'] = $row['usuario_id'];
-        header("Location: dashboard.php"); // Redireciona para a página após o login bem-sucedido
-    } else {
-        echo "Credenciais inválidas.";
-    }
-
+    if (password_verify($senha, $senhaHash)) {
+      // Credenciais corretas
+      $_SESSION['email'] = $email;
+      header('Location: pedidos.php');
+      exit();
+  } else {
+      // Credenciais incorretas
+      unset($_SESSION['email']);
+      header('Location: login.php?erro=1');
+      exit();
+  }
+  
 }
 ?>
 
@@ -38,7 +43,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 <body class="body2">
-  
   <!--<nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">

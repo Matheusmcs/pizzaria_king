@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="body3">
+<body class="body2">
 
   
   <header>
@@ -19,7 +19,7 @@
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <a class="a-logo" href="inicio.html">
-            <h1 class="logo">Pizzaria <strong id="grosso">King</strong></h1>
+            <h1 class="logo">Pizzaria <strong id="h1y">King</strong></h1>
             <!--a logo que eu transformei em letras porque não estou conseguindo colocar as imagens transparentes-->
           </a>
         </a>
@@ -39,39 +39,35 @@
     </nav>
 
   </header>
-  <div class="div-inicio">
-
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="imagens/banner_pizza.png" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="imagens/5.png" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="imagens/4.png" class="d-block w-100" alt="...">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-        data-bs-slide="next">
-
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-
-  </div>
   <main>
-    
-    <div class="div div-3">
-   
-      
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Bem vindo ao Pizzaria King</h1>
+        <p class="p-home">aqui você podera desfrutar de  pizzas como um REI !!</p>
+      </div>
+      <div class="col-md-6">
+        <h1>exemplos de pizza</h1>
+        <div class="div-inicio">
+
+          <div id="carouselExampleAutoplaying " class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="img-fluid2" src="imagens/pizza_calabresa.png" class="d-block w-50" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img class="img-fluid2" src="imagens/pizza_frango.png" class="d-block w-50" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img class="img-fluid2" src="imagens/pizza_chocolate.png" class="d-block w-50" alt="...">
+              </div>
+            </div>
+           
+          </div>
+        </div>
+        <a class="btn btn-outline-light ml-4 btn-warning a-inicio" href="pedidos.php">venha conferir outras pizzas</a>
+        <a class="btn btn-outline-light ml-4 btn-warning a-inicio" href="promocoes.php">venha conferir as nossas promoções</a>
+      </div>
+    </div>
   </main>
 </body>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"

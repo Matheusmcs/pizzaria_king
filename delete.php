@@ -1,18 +1,18 @@
 <?php
 
-if(!empty($_GET['id']))
+if(!empty($_GET['usuario_id']))
 {
     include_once('conexao.php');
 
-    $id = $_GET['id'];
+    $id = $_GET['usuario_id'];
 
-    $sqlSelect = "SELECT *  FROM usuarios WHERE id=$id";
+    $sqlSelect = "SELECT *  FROM usuarios WHERE usuario_id=$id";
 
     $result = $conexao->query($sqlSelect);
 
     if($result->num_rows > 0)
     {
-        $sqlDelete = "DELETE FROM usuarios WHERE id=$id";
+        $sqlDelete = "DELETE FROM usuarios WHERE usuario_id=$id";
         $resultDelete = $conexao->query($sqlDelete);
     }
 }

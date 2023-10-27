@@ -183,6 +183,11 @@ margin-bottom: 10px;
   .img-fluid2{
     width: 200px;
   }
+  .img-fluid3{
+        width: 200px;
+        margin-left: 40px;
+    
+  }
   .logo{
     color: white;
   }
@@ -223,19 +228,16 @@ margin-bottom: 10px;
     text-decoration: none;
     white-space: nowrap;
 }
-#grosso {
-    color: yellow;
-    
+#h1y {
+    color: black;
+    background-color: #faa600;
     border-radius: 10px;
     padding: 2px;}
   .pedido {
-  /*  display: flex;*/
     justify-content: space-between;
     align-items: center;
   }
-  #pred{
-    color: red;
-  }
+  
   
   .quantidade {
     display: flex;
@@ -285,49 +287,33 @@ margin-bottom: 10px;
     border: 1px solid #ccc;
     margin-left: 1000px;
 }
-.footer{
-    background-color: black;
-    color: white;
-}
+
 
 .col-md-4 {
     flex: 0 0 auto;
     width: 32.333333%;
     background-color: bisque;
 }
+.col-md-6 {
+    color: white;
+    text-align: center;
+    flex: 0 0 auto;
+    width: 50%;
+}
 .item-quantidade {
     text-align: center;
     color: black;
     border-radius: 10px;
 }
-@media (max-width: 575.98px) {
-    .a-logo{
-        margin-right: 200px;
-        text-decoration: none;
-      }
-
+p.p-home {
+    font-size: 21px;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 101px;
 }
-    
-   
+a.a-home{
 
-
-/*// `md` applies to small devices (landscape phones, less than 768px)*/
-@media (min-width: 576px) and (max-width: 767.98px) { 
-    .a-logo{
-        margin-right: 200px;
+        color: white;
         text-decoration: none;
-      }
-    
-}
-        
-
-/*// `lg` applies to medium devices (tablets, less than 992px)*/
-@media (min-width: 768px) and (max-width: 991.98px) { 
-   
- }
-
-/*// `xl` applies to large devices (desktops, less than 1200px)*/
-@media (min-width:992px) and (max-width: 1199.98px) { 
-   
     
 }

@@ -29,6 +29,14 @@
       <form action="processar_cadastro.php" method="post">
         <!--<label for="email">Informe seu E-mail:</label>-->
         <input 
+        type="text" 
+        class="nome_cliente caixa input" 
+        name="nome" 
+        placeholder="Digite seu nome completo"
+        required
+        />
+        
+        <input 
         type="email"
         class="caixa email input" 
         name="email"
@@ -55,13 +63,6 @@
         />-->
 
        <!-- <label for="nome">Informe seu Nome:</label>-->
-        <input 
-        type="text" 
-        class="nome_cliente caixa input" 
-        name="nome" 
-        placeholder="Digite seu nome completo"
-        required
-        />
         
        <!-- <label for="endereco">Informe seu endereço: </label>-->
         <input

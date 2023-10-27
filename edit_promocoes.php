@@ -36,7 +36,7 @@ if (!empty($_GET['ID'])) {
      
        <input 
        type="text" 
-        class="nome_cliente caixa input" 
+        class=" caixa input" 
         name="Nome" 
         placeholder="Digite seu nome completo"
         required
@@ -45,7 +45,7 @@ if (!empty($_GET['ID'])) {
         />
        <input 
        type="text" 
-        class="nome_cliente caixa input" 
+        class=" caixa input" 
         name="Validade" 
         placeholder="tempo médio de entrega"
         required

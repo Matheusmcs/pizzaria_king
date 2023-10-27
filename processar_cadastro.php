@@ -1,17 +1,14 @@
 <?php
 
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            include_once('conexao.php');
-            $email = $_POST["email"];
-        $senha = /*password_hash(*/ $_POST["senha"]; /*, PASSWORD_BCRYPT);*/
-           /* $confirmar_senha = $_POST["confirmar_senha"];*/
-            $nome = $_POST["nome"];
-            $endereco = $_POST["endereco"];
-            $telefone = $_POST["telefone_cliente"];
-        
-            /*if ($senha !== $confirmar_senha) {
-                die("As senhas não coincidem. <a href='cadastrar.html'>Voltar</a>");
-            }*/
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                include_once('conexao.php');
+                $email = $_POST["email"];
+                $senha = $_POST["senha"];
+                $senhaCriptografada = password_hash($senha, PASSWORD_DEFAULT);
+                $nome = $_POST["nome"];
+                $endereco = $_POST["endereco"];
+                $telefone = $_POST["telefone_cliente"];
+            
         
             $sql = "INSERT INTO usuarios (email, senha, nome, endereco, telefone) VALUES (?, ?, ?, ?, ?)";
             $stmt = $conexao->prepare($sql);

@@ -36,7 +36,7 @@ if (!empty($_GET['ID'])) {
      
        <input 
        type="text" 
-        class="nome_cliente caixa input" 
+        class="nome_cliente caixa " 
         name="Nome" 
         placeholder="Digite o nome da pizza"
         required
@@ -45,7 +45,7 @@ if (!empty($_GET['ID'])) {
         />
        <input 
        type="text" 
-        class="nome_cliente caixa input" 
+        class="nome_cliente caixa " 
         name="Preco" 
         placeholder="preço"
         required

@@ -120,7 +120,7 @@ $logado = $_SESSION['email'];
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ">
             <li class="nav-item"><a class="btn btn-outline-light ml-4 btn-danger a-inicio"
-                href="carrinho.php">Carrinho</a></li>
+                href="inicio.php">voltar</a></li>
             <a class="nav-link1 dropdown-toggle a-dropdown btn btn-outline-light ml-4 btn-danger" href="#" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
               Perfil
@@ -210,7 +210,7 @@ $logado = $_SESSION['email'];
         </div>
 
 
-        <a href="conclui.php">concluir pedido</a>
+        <a class="btn btn-outline-light ml-4 btn-warning a-inicio" href="conclui.php">concluir pedido</a>
     </form>
   </main>
 </body>
